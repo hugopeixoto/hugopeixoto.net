@@ -24,13 +24,13 @@ layout:    nil   # no layout
 //!box_link = #94C7B6
 
 // deviation of http://www.colourlovers.com/palette/444487/Curiosity_Killed
-!box_foreground = #FFF8EF
-!box_background = #2E2633
-!color_foreground = #2E2633
-!color_background = #FFF8EF
-!color_background = #FaFFFF
-!box_link = #A97860
-!color_link = #99173C
+$box_foreground: #FFF8EF
+$box_background: #2E2633
+$color_foreground: #2E2633
+$color_background: #FFF8EF
+$color_background: #FaFFFF
+$box_link: #A97860
+$color_link: #99173C
 
 // Curiosity killed with white background
 //!box_background = #FFF8EF
@@ -38,7 +38,7 @@ layout:    nil   # no layout
 //!color_foreground = #2E2633
 //!color_background = white
 //!color_link = #99173C
-//!box_link = !color_link
+//!box_link  $color_link
 
 *
   :margin 0px
@@ -56,10 +56,10 @@ em
   :font-weight bold
 
 html
-  :color= !color_foreground
+  :color $color_foreground
   :padding-bottom 40px
   //:background url(/images/bg-header.png) repeat-x
-  :background-color= !color_background
+  :background-color $color_background
   //:background url(/images/bg.png)
 
 body
@@ -67,7 +67,7 @@ body
   :margin 0px auto
 
 a, a:visited, a:active
-  :color= !color_link
+  :color $color_link
   :background-color transparent
 
 a.external
@@ -90,12 +90,12 @@ h3
 
 #header
   a, a:visited, a:active
-    :color= !box_link
+    :color $box_link
     :background-color transparent
 
   :font-style normal
-  :background-color= !box_background
-  :color= !box_foreground
+  :background-color $box_background
+  :color $box_foreground
   :overflow auto
   :width 100%
   :margin 0px 0px 60px 0px
@@ -111,7 +111,7 @@ h3
     :padding 0px 40px
     :font-size 2.5em
     :text-decoration none
-    :color= !box_foreground
+    :color $box_foreground
     :background-color transparent
 
   img
@@ -175,7 +175,7 @@ h3
     :margin-top 20px
     //label
     //  :text-decoration underline
-    //  :color= !color_link
+    //  :color $color_link
     //  :cursor pointer
 
     //input[type=checkbox]
