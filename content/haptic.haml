@@ -1,0 +1,52 @@
+---
+title:      Hugo Peixoto - Haptic experiments
+filter:     haml
+---
+
+%h1 Haptic experiments
+
+%p.question What work have I done in the haptic field?
+%p
+  The Instrumentation for Measurement Laboratory at
+  = external_link_to 'FEUP', 'http://fe.up.pt'
+  is equipped with a
+  = succeed '.' do
+    = external_link_to 'haptic device', 'http://en.wikipedia.org/wiki/Haptic_technology'
+
+  We started by modelling the device, SensAble's Phantom Premium 1.5,
+  in a 3D environment using Blender. We recorded a
+  = external_link_to 'sample video', 'http://www.youtube.com/watch?v=0SEoW0AB244'
+  of the skeleton movement working.
+  
+%p
+  Afterwards, we mapped the real device
+  movement into the virtual device previously created. We also binded a few
+  computer keys in order to control the device through the keyboard. This allowed
+  us to understand the device API.
+
+%p
+  Finally, we made a small sample game, in which the player had to pop balloons
+  that appeared from the bottom of the screen and floated up. The player would
+  feel force feedback whenever the cursor came in contact with each balloon.
+
+%p.question Who was involved?
+
+%p
+  I've worked with my colleague,
+  = external_link_to 'Júlio Santos', 'http://ni.fe.up.pt/~jsantos', :rel => 'friend met colleague'
+  under the supervision of Professors
+  = succeed ',' do
+    = external_link_to 'A. Augusto de Sousa', staff_url('209500'), :rel => 'acquaintance met colleague'
+  = external_link_to 'Maria Teresa Restivo', staff_url('208103'), :rel => 'acquaintance met colleague'
+  and 
+  = external_link_to 'António Mendes Lopes', staff_url('211599'), :rel => 'acquaintance met colleague'
+
+%p.question Any publications?
+
+%p
+  We published a small article regarding this study, entitled
+  %cite "Human-Machine Real-Virtual Haptic Interaction Systems"
+  which was published at the Virtual University 9th International Conference,
+  Bratislava, December 2008.
+
+

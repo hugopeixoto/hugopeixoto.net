@@ -1,0 +1,272 @@
+---
+extension: css
+filter:    sass
+layout:    nil   # no layout
+---
+
+// #dae2ed, #c8d7db
+//!color_foreground = #094657
+
+// DestroyToday layout
+//!color_link = rgb(0, 121, 152)
+//!color_foreground = rgb(207, 212, 216)
+//!color_background = rgb(34, 34, 34)
+//!box_background = rgb(43, 43, 43)
+//!box_foreground =  #D6E1C7
+//!box_link = #94C7B6
+
+// simple gray with http://www.colourlovers.com/palette/625987/dont_you_go_down
+//!color_link = rgb(0, 121, 152)
+//!color_foreground = rgb(34, 34, 34)
+//!color_background = rgb(240, 240, 240)
+//!box_background = #403B33 
+//!box_foreground =  #D6E1C7
+//!box_link = #94C7B6
+
+// deviation of http://www.colourlovers.com/palette/444487/Curiosity_Killed
+!box_foreground = #FFF8EF
+!box_background = #2E2633
+!color_foreground = #2E2633
+!color_background = #FFF8EF
+!color_background = #FaFFFF
+!box_link = #A97860
+!color_link = #99173C
+
+// Curiosity killed with white background
+//!box_background = #FFF8EF
+//!box_foreground = #2E2633
+//!color_foreground = #2E2633
+//!color_background = white
+//!color_link = #99173C
+//!box_link = !color_link
+
+*
+  :margin 0px
+  :padding 0px
+  :font-family Verdana, sans-serif
+  :font-size 13px
+  :line-height 20px
+  :outline 0px
+
+ul
+  :list-style-type none
+
+em
+  :font-style normal
+  :font-weight bold
+
+html
+  :color= !color_foreground
+  :padding-bottom 40px
+  //:background url(/images/bg-header.png) repeat-x
+  :background-color= !color_background
+  //:background url(/images/bg.png)
+
+body
+  :width 960px
+  :margin 0px auto
+
+a, a:visited, a:active
+  :color= !color_link
+  :background-color transparent
+
+a.external
+  :background url('/images/external.png') center right no-repeat
+  :padding-right 10px
+
+h1, h2, #menu p.question
+  :font-weight bold
+  :font-size 1.1em
+  :padding 0px 0px 0px 0px
+  :margin 40px 0px 0px 0px
+ 
+  &:first-child
+    :margin-top 0px
+h1
+  :font-size 1.4em
+
+h3
+  :margin 20px 0px 0px 0px
+
+#header
+  a, a:visited, a:active
+    :color= !box_link
+    :background-color transparent
+
+  :font-style normal
+  :background-color= !box_background
+  :color= !box_foreground
+  :overflow auto
+  :width 100%
+  :margin 0px 0px 60px 0px
+
+  a.fn
+    :width 240px
+    :display block
+    :height 80px
+    :line-height 80px
+    :font-family Arial
+    :font-weight normal
+    :float left
+    :padding 0px 40px
+    :font-size 2.5em
+    :text-decoration none
+    :color= !box_foreground
+    :background-color transparent
+
+  img
+    :float left
+    :margin-right 15px
+
+  p
+    :text-align left
+    :height 20px
+    :line-height 20px
+
+  img + p
+    :margin-top 10px
+
+#menu
+  :overflow auto
+  :margin 0px 40px
+  :padding 0px
+  :float right
+  :width 240px
+  h2 + *,
+  p.question + *
+    :margin-top 20px
+
+  ul
+    li
+      a
+        :font-weight normal
+
+#content
+  :overflow auto
+  :width 600px
+  :margin-left 40px
+
+  p.question, h2
+    :font-weight bold
+    :font-size 1.2em
+    :margin-top 40px
+    &:first-child
+      :margin-top 0px
+
+  p
+    :margin-top 20px
+
+  & > ol, & > ul
+    :margin 20px 0px
+    :padding-left 40px
+
+  ol li
+    div.UltraViolet
+      :display none
+      :height 400px
+      :overflow-y scroll
+      :background-color white
+
+  * + h2
+    :margin-top 40px
+
+  // Blog
+  h2 + form
+    :margin-top 20px
+    //label
+    //  :text-decoration underline
+    //  :color= !color_link
+    //  :cursor pointer
+
+    //input[type=checkbox]
+    //  /* I wish I could just use "display: none", but some browsers hate me.
+    //  :position absolute
+    //  :left -100px
+
+    //input[type=checkbox]:checked ~ div.UltraViolet
+    //  :display block
+    //  *
+    //    :font-size 10px
+
+
+
+  ul.vcalendar
+    :padding-left 0px
+    li.vevent
+      & + li.vevent
+        :margin-top 40px
+      :position relative
+      :overflow auto
+
+      li
+        :overflow auto
+        :margin-left 160px
+
+      li.summary, li.location
+        :font-weight bold
+
+      li.date
+        :margin-left 0px
+        :position absolute
+        :width 120px
+        :top 0px
+        :left 0px
+
+      li.location
+        :margin-bottom 20px
+
+  ul.publications
+    :padding 0px
+    li.publication
+      :margin-top 40px
+    li.publication:first-child
+      :margin-top 0px
+
+    ul
+      :padding 0px
+
+
+dl
+  :position relative
+  :overflow auto
+  :margin-top 20px
+
+dt
+  :font-weight bold
+  
+dd, dt
+  :padding 0cm
+  :margin 0cm 0cm 20px 0cm
+  
+dt
+  :float left
+  :clear left
+  :width 160px
+  
+dd
+  :overflow auto
+
+dl.plan
+  dd
+    :margin-top 20px
+  dt
+    :margin-top 20px
+  
+dd p
+  :margin-top 20px
+
+#content dd p:first-child
+  :margin-top 0px
+
+ul.contests
+  :margin 20px 0pt 0pt 0pt
+  :padding 0pt
+  
+ul.contests li
+  :overflow auto
+  
+ul.contests span
+  :float right
+  :width 80px
+  :margin 0px
+  

@@ -1,0 +1,10 @@
+
+task :default => :build
+
+desc 'deploy the site to the webserver'
+task :deploy => [:build, 'deploy:rsync']
+
+SITE.domains = {'/' => 'http://hugopeixoto.net', '/master.hugopeixoto.net' => 'http://master.hugopeixoto.net'}
+
+#SITE.base = '/homepage/output'
+# EOF
