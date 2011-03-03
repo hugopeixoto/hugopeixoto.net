@@ -3,7 +3,7 @@ module XhtmlHelper
 
 	def stylesheet_tag name, options = {}
 		newoptions = {
-			:href => '/css/' + name + '.css',
+			:href => name + '.css',
 			:type => 'text/css',
 			:rel => 'stylesheet',
 			:media => options[:media] || 'screen, projection'
@@ -12,7 +12,7 @@ module XhtmlHelper
 	end
 
   def javascript_tag filename
-    "<script src='/javascripts/%s' type='text/javascript'></script>" % filename
+    "<script src='%s.js' type='text/javascript'></script>" % filename
   end
 
  	def external_link_to name, link, options = {}
