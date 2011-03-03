@@ -19,7 +19,9 @@ filter:      haml
   Here's the list of
   = surround '(', ')' do
     = mergesorts.count
-  completed implementations.
+  completed implementations, hosted on
+  = succeed '.' do
+    = external_link_to 'github', 'https://github.com/hugopeixoto/mergesort'
 
 %ol
   - mergesorts.each do |mergesort|
