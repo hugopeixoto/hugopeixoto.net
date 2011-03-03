@@ -16,107 +16,11 @@ filter:      haml
 %p.question How's it going?
 
 %p
-  Here's the list of completed implementations.
+  Here's the list of
+  = surround '(', ')' do
+    = mergesorts.count
+  completed implementations.
 
 %ol
-  %li
-    Assembly IA32
-    %a{:href=>'#', :onclick=>'return toggle(this.nextSibling.nextSibling)'} View
-    = uv_from_file('/home/wiki/public_html/stuff/done/mergesort.asm', :lang => 'mips')
-
-  %li
-    Bash scripting
-    %a{:href=>'#', :onclick=>'return toggle(this.nextSibling.nextSibling)'} View
-    = uv_from_file('/home/wiki/public_html/stuff/done/mergesort.sh', :lang => 'shell-unix-generic')
-  %li
-    Brainfuck
-    %a{:href=>'#', :onclick=>'return toggle(this.nextSibling.nextSibling)'} View
-    = uv_from_file('/home/wiki/public_html/stuff/done/mergesort.bf', :lang => 'io')
-  %li
-    C
-    %a{:href=>'#', :onclick=>'return toggle(this.nextSibling.nextSibling)'} View
-    = uv_from_file('/home/wiki/public_html/stuff/done/mergesort.c', :lang => 'c')
-  %li
-    C++
-    %a{:href=>'#', :onclick=>'return toggle(this.nextSibling.nextSibling)'} View
-    = uv_from_file('/home/wiki/public_html/stuff/done/mergesort.cpp', :lang => 'c++')
-  %li
-    C++ Template MetaProgramming
-    %a{:href=>'#', :onclick=>'return toggle(this.nextSibling.nextSibling)'} View
-    = uv_from_file('/home/wiki/public_html/stuff/done/metamergesort.cpp', :lang => 'c++')
-  %li
-    Common Lisp
-    %a{:href=>'#', :onclick=>'return toggle(this.nextSibling.nextSibling)'} View
-    = uv_from_file('/home/wiki/public_html/stuff/done/mergesort.lisp', :lang => 'lisp')
-  %li
-    Erlang
-    %a{:href=>'#', :onclick=>'return toggle(this.nextSibling.nextSibling)'} View
-    = uv_from_file('/home/wiki/public_html/stuff/done/mergesort.erl', :lang => 'erlang')
-  %li
-    Fortran 95
-    %a{:href=>'#', :onclick=>'return toggle(this.nextSibling.nextSibling)'} View
-    = uv_from_file('/home/wiki/public_html/stuff/done/mergesort.f95', :lang => 'fortran')
-  %li
-    Haskell
-    %a{:href=>'#', :onclick=>'return toggle(this.nextSibling.nextSibling)'} View
-    = uv_from_file('/home/wiki/public_html/stuff/done/mergesort.hs', :lang => 'haskell')
-  %li
-    J
-    %a{:href=>'#', :onclick=>'return toggle(this.nextSibling.nextSibling)'} View
-    = uv_from_file('/home/wiki/public_html/stuff/done/mergesort.j', :lang => 'prolog')
-  %li
-    Java
-    %a{:href=>'#', :onclick=>'return toggle(this.nextSibling.nextSibling)'} View
-    = uv_from_file('/home/wiki/public_html/stuff/done/mergesort.java', :lang => 'java')
-  %li
-    Javascript
-    %a{:href=>'#', :onclick=>'return toggle(this.nextSibling.nextSibling)'} View
-    = uv_from_file('/home/wiki/public_html/stuff/done/mergesort.js', :lang => 'javascript')
-  %li
-    LOLCODE 1.0
-    %a{:href=>'#', :onclick=>'return toggle(this.nextSibling.nextSibling)'} View
-    = uv_from_file('/home/wiki/public_html/stuff/done/mergesort.lol', :lang => 'php')
-  %li
-    Maxima
-    %a{:href=>'#', :onclick=>'return toggle(this.nextSibling.nextSibling)'} View
-    = uv_from_file('/home/wiki/public_html/stuff/done/mergesort.m', :lang => 'python')
-  %li
-    mIRC Scripting
-    %a{:href=>'#', :onclick=>'return toggle(this.nextSibling.nextSibling)'} View
-    = uv_from_file('/home/wiki/public_html/stuff/done/mergesort.mrc', :lang => 'lua')
-  %li
-    Perl
-    %a{:href=>'#', :onclick=>'return toggle(this.nextSibling.nextSibling)'} View
-    = uv_from_file('/home/wiki/public_html/stuff/done/mergesort.pl', :lang => 'perl')
-  %li
-    PHP
-    %a{:href=>'#', :onclick=>'return toggle(this.nextSibling.nextSibling)'} View
-    = uv_from_file('/home/wiki/public_html/stuff/done/mergesort.php', :lang => 'php')
-  %li
-    Portugol
-    %a{:href=>'#', :onclick=>'return toggle(this.nextSibling.nextSibling)'} View
-    = uv_from_file('/home/wiki/public_html/stuff/done/mergesort.alg', :lang => 'prolog')
-  %li
-    Prolog
-    %a{:href=>'#', :onclick=>'return toggle(this.nextSibling.nextSibling)'} View
-    = uv_from_file('/home/wiki/public_html/stuff/done/mergesort.prolog', :lang => 'prolog')
-  %li
-    Python
-    %a{:href=>'#', :onclick=>'return toggle(this.nextSibling.nextSibling)'} View
-    = uv_from_file('/home/wiki/public_html/stuff/done/mergesort.py', :lang => 'python')
-  %li
-    Ruby
-    %a{:href=>'#', :onclick=>'return toggle(this.nextSibling.nextSibling)'} View
-    = uv_from_file('/home/wiki/public_html/stuff/done/mergesort.rb', :lang => 'ruby')
-  %li
-    Scheme
-    %a{:href=>'#', :onclick=>'return toggle(this.nextSibling.nextSibling)'} View
-    = uv_from_file('/home/wiki/public_html/stuff/done/mergesort.scm', :lang => 'scheme')
-  %li
-    VDM++
-    %a{:href=>'#', :onclick=>'return toggle(this.nextSibling.nextSibling)'} View
-    = uv_from_file('/home/wiki/public_html/stuff/done/mergesort.vpp', :lang => 'sql')
-  %li
-    XSL
-    %a{:href=>'#', :onclick=>'return toggle(this.nextSibling.nextSibling)'} View
-    = uv_from_file('/home/wiki/public_html/stuff/done/mergesort.xsl', :lang => 'xsl')
+  - mergesorts.each do |mergesort|
+    %li= external_link_to mergesort[0], "https://github.com/hugopeixoto/mergesort/blob/master/#{mergesort[1]}"
