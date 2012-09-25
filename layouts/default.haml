@@ -26,8 +26,11 @@ filter:
       = link_to 'Hugo Peixoto', 'http://hugopeixoto.net/', :attrs => { :class => 'fn' }
       %img.photo{:src => 'http://hugopeixoto.net/images/hugopeixoto.jpg', :alt => 'Picture of Hugo Peixoto'}
 
-      %p Finishing my Master in Informatics and Computing Engineering
-      %p at the Faculty of Engineering of the University of Porto.
+      %p Master in Informatics and Computing Engineering
+      %p
+        Currently working at
+        = external_link_to 'NDrive', 'http://ndrive.com'
+        as a software developer
       %p
         Contact me through 
         = link_to 'hugo.peixoto@gmail.com', 'mailto:hugo.peixoto@gmail.com', :attrs => {:class => 'email', :rel => 'me'}
