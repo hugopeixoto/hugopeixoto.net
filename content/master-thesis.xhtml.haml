@@ -1,5 +1,5 @@
 ---
-title:      Hugo Peixoto - Master thesis
+title:      Master thesis
 filter:     haml
 ---
 
@@ -13,16 +13,15 @@ filter:     haml
 %h2 People
 
 %p
-  This project was developed in the 
-  = succeed ',' do
-    = external_link_to 'Fraunhofer Portugal Research Center AICOS', 'https://fraunhofer.pt/'
-  with the supervision of Ana Cristina Aguiar.
+  This project was developed in
+  = succeed '.' do
+    = external_link_to 'Fraunhofer Portugal Research Center AICOS', 'http://www.fraunhofer.pt/'
 
 %dl.master
   %dt Student
   %dd Hugo Miguel Pereira Peixoto
   %dt Supervisor
-  %dd Luís Paulo Reis (Ph.D.)
+  %dd= external_link_to 'Luís Paulo Reis (Ph.D.)', 'http://paginas.fe.up.pt/~lpreis/'
   %dt Second supervisor
   %dd Ana Cristina Aguiar (Ph.D.)
 

@@ -1,5 +1,4 @@
 ---
-extension: css
 filter:    sass
 layout:    nil   # no layout
 ---
@@ -61,6 +60,7 @@ html
   //:background url(/images/bg-header.png) repeat-x
   :background-color $color_background
   //:background url(/images/bg.png)
+  overflow-y: scroll
 
 body
   :width 960px
@@ -70,8 +70,8 @@ a, a:visited, a:active
   :color $color_link
   :background-color transparent
 
-a.external
-  :background url('/images/external.png') center right no-repeat
+a[rel~=external]
+  :background url('/external.png') center right no-repeat
   :padding-right 10px
 
 h1, h2, #menu p.question
@@ -148,6 +148,9 @@ h3
   :width 600px
   :margin-left 40px
 
+  img
+    margin: 20px
+
   p.question, h2
     :font-weight bold
     :font-size 1.2em
@@ -200,21 +203,22 @@ h3
       :position relative
       :overflow auto
 
-      li
+      & > *
         :overflow auto
         :margin-left 160px
+        :margin-top 0px
 
-      li.summary, li.location
+      .summary, .location
         :font-weight bold
 
-      li.date
+      .date
         :margin-left 0px
         :position absolute
         :width 120px
         :top 0px
         :left 0px
 
-      li.location
+      .location
         :margin-bottom 20px
 
   ul.publications

@@ -1,0 +1,236 @@
+---
+title:      Curriculum vitae
+filter:     haml
+---
+
+%h1 Curriculum vitae
+
+%p.note
+  You can also download a
+  = succeed '.' do
+    = link_to 'PDF version of my curriculum vitae', 'cvitae.pdf'
+
+%p.summary
+  I work in several programming-related projects, both as a professional and as
+  a hobbyist. Both my interests and experience revolve around topics on
+  %em algorithms
+  (general combinatorics, graph theory, geometric computation and others),
+  %em artificial intelligence
+  and
+  = succeed '.' do
+    %em web development
+
+%h2 Work experience
+%ul.vcalendar.experience
+  %li.vevent
+    %h3.summary Software developer
+    %p.location= external_link_to 'NDrive Navigation Systems', 'http://www.ndriveweb.com', :class => 'url'
+    %p.description
+      Currently, I design and optimize database schemas and queries. I am
+      also developing a toolchain to help automate the map build system. I
+      work with technologies such as Python, SQL and C++.
+    %p.date
+      since
+      %abbr.dtstart{:title => '2010-10'} October 2010
+
+  %li.vevent
+    %h3.summary Intern
+    %p.location= external_link_to 'Fraunhofer AICOS', 'http://fraunhofer.pt/', :class => 'url'
+    %p.description
+      I studied, implemented (in C++) and compared several algorithms for the
+      vehicle routing problem applied to waste collection vehicles routing.
+    %p.date
+      %abbr.dtstart{:title => '2010-02'} February
+      to
+      %abbr.dtend{:title => '2010-07'} July 2010
+
+  %li.vevent
+    %h3.summary Flash developer
+    %p.location= external_link_to 'Bolos Quentes', 'http://www.bolosquentes.com/', :class => 'url'
+    %p.description
+      Implemented a multiplayer game about recycling and the environment
+      using Flash and ActionScript 3.
+    %p.date
+      during
+      %abbr.dtstart{:title => '2010-05'} May 2010
+
+  %li.vevent
+    %h3.summary Haptic software developer
+    %p.location Faculty's Department of Mechanical Engineering
+    %p.description
+      Developed a haptic-feedback enabled application for remotely
+      controlling a motor. Built using C++, Qt and OpenGL.
+    %p.date
+      from
+      %abbr{:title => '2009-09'} 2009
+      to
+      %abbr{:title => '2010-04'} 2010
+
+  %li.vevent
+    %h3.summary Computer Graphics undergraduate teaching assistant
+    %p.location 
+      =external_link_to 'Faculty of Engineering of the University of Porto', 'http://www.fe.up.pt', :class => 'url'
+      (FEUP)
+    %p.description
+      I helped students with their C++, Java and OpenGL problems, with
+      special focus on lighting, texture mapping, shading and
+      transformations.
+    %p.date
+      %abbr.dtstart{:title => '2009-02'} February 2009
+      to
+      %abbr.dtend{:title => '2009-07'} June 2009
+
+  %li.vevent
+    %h3.summary Statistics gathering system developer
+    %p.location
+      = external_link_to 'National Healthcare Regulation Entity', 'http://www.ers.pt', :class => 'url'
+      (ERS)
+    %p.description
+      I wrote SQL queries for a module that generates reports on
+      complaints for all portuguese healthcare entities. This web
+      application was written in ASP.NET and MSSQL.
+    %p.date
+      %abbr.dtstart{:title => '2007-08'} Summer 2007
+
+  %li.vevent
+    %h3.summary Web developer
+    %p.location
+      = external_link_to 'Centre for Spatial Communication and Representation', 'http://web.ccre.arq.up.pt', :class => 'url'
+    %p.description
+      In a team of three, I planned and developed a social web platform
+      for the publication of architectural projects. We used Flash, XML,
+      XHTML, CSS, PHP, MySQL and Python.
+    %p.date
+      %abbr.dtstart{:title => '2006-04'} 2006
+      to
+      %abbr.dtend{:title => '2009-03'} 2009
+
+  %li.vevent
+    %h3.summary Algorithms and Data Structures private tutor
+    %p.location Freelancer
+    %p.description
+      I helped two graduation finalists with their studies for the final
+      exam on the algorithms and data structures course. They both
+      succeeded, with grades of 13 and 19 out of 20.
+    %p.date
+      %abbr.dtstart{:title => '2006-08'} Summer 2006
+ 
+%h2 Education
+
+%ul.vcalendar.education
+  %li.vevent
+    %h3.summary Master in Informatics and Computing Engineering
+    %p.location
+      =external_link_to 'Faculty of Engineering of the University of Porto', 'http://www.fe.up.pt', :class => 'url'
+      (FEUP)
+    %p.description
+      Average grade of 17 out of 20.
+
+    %p.date
+      From
+      %abbr.dtstart{:title => '2004-10'} 2004
+      to
+      %abbr.dtend{:title => '2010-07-26'} 2010
+
+%h2 Extra curricular experience
+%ul.vcalendar.extracurricular
+  %li.vevent
+    %h3.summary OpenID Provider developer
+    %p.location
+      = external_link_to "FEUP's Students Union: Informatics Division", 'http://ni.fe.up.pt', :class => 'url'
+      (NIFEUP)
+    %p.description
+      I implemented part of an OpenID Provider for FEUP's community. I
+      connected it to our authentication server, providing thousands of
+      accounts without need for registration.
+    %p.date
+      %abbr.dtstart{:title => '2009-04'} April
+      to
+      %abbr.dtend{:title => '2009-09'} October 
+      2009
+  
+  %li.vevent
+    %h3.summary President
+    %p.location
+      = external_link_to "FEUP's Students Union: Informatics Division", 'http://ni.fe.up.pt', :class => 'url'
+      (NIFEUP)
+    %p.description
+      I monitor and coordinate the group's projects and activities. I
+      interact with several faculty departments, looking for opportunities to
+      start new projects.
+    %p.date
+      %abbr.dtstart{:title => '2009-03'} Since 2009
+
+  %li.vevent
+    %h3.summary Haptic software developer
+    %p.location Measurement for Instrumentation Laboratory, at FEUP (LIM)
+    %p.description
+      I developed a game in which the user controls a physical
+      pointer and tries to pop virtual balloons with it. The game was
+      developed in C++, using OpenGL and the device's library.
+    %p.date
+      %abbr.dtstart{:title => '2007-10'} 2007
+      to
+      %abbr.dtend{:title => '2009-03'} 2009
+
+  %li.vevent
+    %h3.summary Founding member
+    %p.location
+      = external_link_to "FEUP's Students Union: Informatics Division", 'http://ni.fe.up.pt', :class => 'url'
+      (NIFEUP)
+    %p.description
+      I developed several web applications to help gather funding for
+      this group. On the World Usability Day of 2008, I helped with the
+      organisation of a set of talks on the subject.
+    %p.date
+      %abbr.dtstart{:title => '2006-05'} 2006
+      to
+      %abbr.dtend{:title => '2009-03'} 2009
+
+%h2 Publications
+
+%ul.publications
+  %li.publication
+    %p.authors Hugo Peixoto, João Portela, Rui Teixeira, Filipe Castro, Luís Paulo Reis.
+    %cite.title NEATSqueak on Wheels: Neural networks applied to movement optimization of a simulated robot
+    %p.proceedings Progress in Artificial Intelligence: 14th Portuguese Conference on Artificial Intelligence, Epia 2009, Aveiro, Portugal, October 12-15, 2009
+
+  %li.publication
+    %p.authors António M. Lopes, Júlio Santos, Hugo Peixoto, A. Augusto Sousa, M. Teresa Restivo
+    %cite.title Human-Machine Real-Virtual Haptic Interaction Systems
+    %p.proceedings Virtual University 9th International Conference, Bratislava, 11-12 December, 2008
+
+%h2 Additional information
+
+%dl
+  %dt Languages
+  %dd Portuguese (native) and English (fluent)
+
+  %dt Programming contests
+  %dd
+    %p
+      I have been participating, in a team of three, in several programming contests held by the
+      Association of Computer Machinery (ACM), from 2005 to 2009. Our best results were:
+
+    %ul.contests
+      %li
+        TIUP (Portuguese Inter-University Tournament)
+        %span 1st place
+      %li
+        MIUP (Portuguese Inter-University Marathon)
+        %span 2nd place
+      %li
+        SWERC (South-Western European Regional Contest)
+        %span 17th place
+
+    %p
+      I entered in Google Code Jam 2008, 2009 and 2010, a worldwide programming
+      contest with more than 8000 participants. In both 2009 and 2010 I ranked
+      among the <em>top 500 contestants</em>, being the best ranked Portuguese
+      participant.
+
+  %dt Open source contributions
+  %dd
+    I have contributed to multiple open source projects, such as <em>Ruby on Rails</em>,
+    by submitting code patches. I also helped by translating some software
+    packages to Portuguese, for the <em>Debian Project</em>.
