@@ -1,11 +1,7 @@
 ---
 title: Web services in go
+created_at: 2015-01-31
 ---
-
-Web services in go
-=====
-<p class='stamp'>2015-01-31</p>
-
 I've been writing quite a few different web services in my current job.
 Initially, they were all written in rails. As we shift towards a microservices
 / services oriented / whatchamacallit architecture, I've started experimenting

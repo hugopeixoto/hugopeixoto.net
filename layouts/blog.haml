@@ -34,4 +34,7 @@ filter:
     #menu= render 'menu'
 
     -# Content
-    #content= yield
+    #content
+      %h1= @item[:title]
+      %p.stamp= @item[:created_at]
+      = yield
