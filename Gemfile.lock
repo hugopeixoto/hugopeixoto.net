@@ -6,6 +6,7 @@ GEM
       colored (~> 1.2)
     haml (4.0.6)
       tilt
+    kramdown (1.5.0)
     nanoc (3.7.4)
       cri (~> 2.3)
     sass (3.4.9)
@@ -16,5 +17,6 @@ PLATFORMS
 
 DEPENDENCIES
   haml
+  kramdown
   nanoc
   sass

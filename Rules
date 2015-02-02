@@ -25,6 +25,9 @@ compile '*' do
         layout 'default'
       when 'sass'
         filter :sass
+      when 'md'
+        filter :kramdown
+        layout 'blog'
     end
   end
 end

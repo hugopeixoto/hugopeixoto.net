@@ -7,8 +7,10 @@ filter:       haml
   %li= link_to_unless_current 'Introduction', find(@items, '/')
   %li= link_to_unless_current 'My curriculum vitae', find(@items, '/cvitae/')
   %li= external_link_to 'Email me', 'mailto:hugo.peixoto@gmail.com'
-  /%li= link_to 'My blog', '/blog'
-  /%li= link_to_unless_current 'More about me', find(@items, '/about/')
+
+%p.question Blog
+%ul
+  %li= link_to_unless_current 'Web services in go', find(@items, '/blog/web-services-in-go/')
 
 %p.question Random projects
 %ul
