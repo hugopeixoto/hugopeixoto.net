@@ -17,21 +17,13 @@ filter:
     %link{css_attrs('site.css')}
     %link{css_attrs('mac_classic.css')}
     %link{css_attrs('print.css', 'print')}
+    %link{:href => "http://fonts.googleapis.com/css?family=Varela+Round", :rel => 'stylesheet', :'data-inprogress' => ''}
 
   %body
     -# Header
     #header.vcard
       = link_to 'Hugo Peixoto', '/', { :class => 'fn' }
-      %img.photo{:src => '/images/hugopeixoto.jpg', :alt => 'Picture of Hugo Peixoto'}
 
-      %p Master in Informatics and Computing Engineering
-      %p
-        Currently working at
-        = external_link_to 'NDrive', 'http://ndrive.com'
-        as a software developer
-      %p
-        Contact me through 
-        = link_to 'hugo.peixoto@gmail.com', 'mailto:hugo.peixoto@gmail.com', {:class => 'email', :rel => 'me'}
 
     -# Menu
     #menu= render 'menu'

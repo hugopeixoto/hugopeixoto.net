@@ -17,9 +17,11 @@ compile '*' do
   if item.binary?
     # don’t filter binary items
   else
-    case item[:extension].split('.')[1]
+    case item[:extension].split('.').last
       when 'haml'
         filter :haml
+        layout 'default'
+      when 'html'
         layout 'default'
       when 'sass'
         filter :sass
@@ -37,7 +39,7 @@ route '*' do
     item.identifier.chop + '.' + item[:extension]
   else
     if item.identifier == '/'
-      item.identifier + 'index.xhtml'
+      item.identifier + 'index.html'
     else
       item.identifier.chop + "." + item[:extension].split('.')[0]
     end
