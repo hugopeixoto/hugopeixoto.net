@@ -66,45 +66,47 @@ services, so we saw no reason to use anything else.
 
 Here's a sample deploy.rb file:
 
-    set :application, 'binfo'
-    set :repo_url, 'company.com:web/binfo.git'
-    
-    set :deploy_to, '/path/to/app'
-    set :scm, :git
-    
-    set :ssh_options, { forward_agent: true }
-    set :default_env, { path: "/usr/local/go/bin:$PATH" }
-    
-    set :linked_files, %w{ config/settings.json }
-    
-    set :service, 'service nlife-binfo'
-    
-    namespace :go do
-      desc 'Build go application'
-      task :build do
-        on roles(:app), in: :sequence, wait: 5 do
-          within release_path do
-            with gopath: release_path do
-              execute :sh, 'build.sh'
-            end
-          end
+~~~~
+set :application, 'binfo'
+set :repo_url, 'company.com:web/binfo.git'
+
+set :deploy_to, '/path/to/app'
+set :scm, :git
+
+set :ssh_options, { forward_agent: true }
+set :default_env, { path: "/usr/local/go/bin:$PATH" }
+
+set :linked_files, %w{ config/settings.json }
+
+set :service, 'service nlife-binfo'
+
+namespace :go do
+  desc 'Build go application'
+  task :build do
+    on roles(:app), in: :sequence, wait: 5 do
+      within release_path do
+        with gopath: release_path do
+          execute :sh, 'build.sh'
         end
       end
     end
-    
-    namespace :deploy do
-    
-      desc 'Restart application'
-      task :restart do
-        on roles(:app), in: :sequence, wait: 5 do
-          sudo fetch(:service), :restart
-        end
-      end
-    
-      after :publishing, :restart
-      after :finishing, 'deploy:cleanup'
-      after :updated, 'go:build'
+  end
+end
+
+namespace :deploy do
+
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      sudo fetch(:service), :restart
     end
+  end
+
+  after :publishing, :restart
+  after :finishing, 'deploy:cleanup'
+  after :updated, 'go:build'
+end
+~~~~
 
 You'll notice that I'm using `service nlife-binfo restart` to restart the
 webservice.  Usually we deploy services to ubuntu, so we use upstart scripts to
@@ -114,17 +116,19 @@ Upstart scripts are relatively simple (although this will probably have to be
 migrated to systemd once it replaces upstart, but that should take a while).
 Here's a sample script:
 
-    description "nlife binfo service"
-    
-    start on (local-filesystems and runlevel [2345])
-    stop on runlevel [06]
-    
-    setuid binfo-runner
-    setgid binfo-runner
-    
-    chdir /path/to/app/current
-    
-    exec bin/binfo
+~~~~
+description "nlife binfo service"
+
+start on (local-filesystems and runlevel [2345])
+stop on runlevel [06]
+
+setuid binfo-runner
+setgid binfo-runner
+
+chdir /path/to/app/current
+
+exec bin/binfo
+~~~~
 
 In the future, I'd like to give [goagain](https://github.com/rcrowley/goagain)
 a try. Its goal is to avoid downtime while the service is reloading.  It

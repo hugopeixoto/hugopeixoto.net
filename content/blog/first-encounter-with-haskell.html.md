@@ -35,9 +35,11 @@ I wanted to write the code in a way such that each line would be read,
 transformed and printed before the next line would be read (to avoid pulling
 everything into memory). Something like:
 
-    while line = getNextLine
-      result = solve line
-      print line
+~~~~
+while line = getNextLine
+  result = solve line
+  print line
+~~~~
 
 Eventually some random stackoverflow answer explained that functions like
 `getContents` are processed in a lazy way, which means that it will read bytes
@@ -105,7 +107,7 @@ fib n = fib (n - 1) + fib (n - 2)
 
 In C++, the dynamic programming approach could be implemented as follows:
 
-~~~~ c++
+~~~~ cc
 const int MAX_N = 100;
 int fib[MAX_N+1];
 
@@ -122,6 +124,7 @@ int main() {
   cout << fib[4] << endl;
 }
 ~~~~
+
 
 In Haskell, the usual precomputed approach goes something like:
 
@@ -148,10 +151,10 @@ import Data.Array
 
 maxn = 100
 fib n = cached ! n
-  where cached = array
+  where cached = fromList
                    (0, maxn)
-                   ([(0, 0), (1, 1)] ++
-                    [(i, cached!(i-2) + cached!(i-1)) | i <- [2..maxn]])
+                   ([0, 1] ++
+                    [cached!(i-2) + cached!(i-1) | i <- [2..maxn]])
 
 main = do
   putStr $ show $ fib 4

@@ -15,13 +15,12 @@ filter:
     %meta{:name => 'language',    :content => 'en-US'}
     %meta{'http-equiv' => 'content-type',  :content => 'application/xhtml+xml; charset=utf-8'}
     %link{css_attrs('/site.css')}
-    %link{css_attrs('/mac_classic.css')}
-    %link{css_attrs('/print.css', 'print')}
-    %link{:href => "http://fonts.googleapis.com/css?family=Varela+Round", :rel => 'stylesheet', :'data-inprogress' => ''}
+    %link{:href => "//fonts.googleapis.com/css?family=Varela+Round", :rel => 'stylesheet', :'data-inprogress' => ''}
 
-    %link{rel: 'stylesheet', href: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css"}
+    %link{rel: 'stylesheet', href: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/monokai_sublime.min.css"}
 
-    %script{src:"//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"}
+    %script{src:"//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"}
+    %script{src:"//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/languages/haskell.min.js"}
     %script hljs.initHighlightingOnLoad();
 
   %body
@@ -37,4 +36,4 @@ filter:
     #content
       %h1= @item[:title]
       %p.stamp= @item[:created_at]
-      = yield
+      ~ yield
