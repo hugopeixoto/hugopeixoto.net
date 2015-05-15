@@ -49,6 +49,7 @@ solve x = show (length x)
 main = do
   queries <- getContents
   putStr (unlines (map solve (lines queries)))
+~~~~
 
 Another issue with I/O that came up was debugging. During these contests, part
 of the challenge is figuring out patterns for given inputs, so it usually helps
@@ -229,7 +230,7 @@ dfs g =
 graph = listArray (0, 4) [[1, 2], [3, 4], [0, 1], [], []]
 main = do
   putStr $ unlines (map show (dfs graph))
-~~~~#_
+~~~~
 
 This would bring the complexity up to `O((|V| + |E|) log |V|)`, as each
 iteration would require a search and insertion into the set. Note: In order to
