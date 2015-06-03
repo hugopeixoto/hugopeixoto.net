@@ -1,6 +1,12 @@
 ---
+kind: article
 title: First impressions of Haskell
 created_at: 2015-05-10
+excerpt:
+  A couple of weeks ago, HackerRank sponsored a functional programming contest.
+  48 hours to solve seven problems in a functional language. This was the
+  perfect opportunity to try out Haskell.
+
 ---
 
 I usually enjoy trying out new languages, but it's not always easy to find an
