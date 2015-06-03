@@ -10,7 +10,9 @@ filter:       haml
 
 %p.question Blog
 %ul
-  %li= link_to_unless_current 'Web services in go', find(@items, '/blog/web-services-in-go/')
+  %li= link_to_unless_current 'Archive', find(@items, '/blog/')
+  - sorted_articles.each do |article|
+    %li= link_to_unless_current article[:title], url_for(article)
 
 %p.question Random projects
 %ul
