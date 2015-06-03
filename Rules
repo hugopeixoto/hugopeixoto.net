@@ -28,6 +28,8 @@ compile '*' do
       when 'md'
         filter :kramdown
         layout 'blog'
+      when 'erb'
+        filter :erb
     end
   end
 end

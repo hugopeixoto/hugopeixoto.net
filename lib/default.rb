@@ -2,6 +2,7 @@
 # before nanoc starts compiling.
 include Nanoc::Helpers::LinkTo
 include Nanoc::Helpers::Rendering
+include Nanoc::Helpers::Blogging
 
 def xhtml_attrs(lang)
   { 'xml:lang' => lang, 'xmlns' => 'http://www.w3.org/1999/xhtml' }
