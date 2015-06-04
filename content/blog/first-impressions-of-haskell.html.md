@@ -6,9 +6,7 @@ excerpt:
   A couple of weeks ago, HackerRank sponsored a functional programming contest.
   48 hours to solve seven problems in a functional language. This was the
   perfect opportunity to try out Haskell.
-
 ---
-
 I usually enjoy trying out new languages, but it's not always easy to find an
 excuse to do so. If I have the time, I usually do a [mergesort
 example](https://github.com/hugopeixoto/mergesort). This forces me to go

@@ -5,7 +5,6 @@ created_at: 2015-01-31
 excerpt:
   I've been writing quite a few different web services in my current job. I'm
   going to talk a bit about my experience writing go web services.
-
 ---
 I've been writing quite a few different web services in my current job.
 Initially, they were all written in rails. As we shift towards a microservices
