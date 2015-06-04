@@ -1,0 +1,31 @@
+---
+filter:
+- haml
+- basepath
+---
+!!!
+%html
+  %head
+    %meta{charset: 'utf-8'}
+    %title= "Hugo Peixoto's blog - " + @item[:title]
+    %meta{name: 'author',      content: 'Hugo Peixoto'}
+    %meta{name: 'description', content: "Personal site of Hugo Peixoto, a computer programming enthusiast and web developer."}
+    %meta{name: 'keywords',    content: 'Hugo Peixoto,Hugo,Peixoto,Programmer,Cambridge,Rails,FEUP,NIFEUP'}
+    %meta{name: 'language',    content: 'en-US'}
+    %link{rel: 'alternate', href: '/blog/feed.xml', type: 'application/atom+xml', title: 'Blog'}
+
+    %link{rel: 'stylesheet', href: '/site.css', type: 'text/css', media: 'screen, projection'}
+    %link{rel: 'stylesheet', href: '//fonts.googleapis.com/css?family=Varela+Round'}
+    %link{rel: 'stylesheet', href: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/monokai_sublime.min.css"}
+
+    %script{src:"//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"}
+    %script{src:"//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/languages/haskell.min.js"}
+    %script hljs.initHighlightingOnLoad();
+
+  %body
+    #header.vcard= link_to 'Hugo Peixoto', '/', class: 'fn'
+    #menu= render 'menu'
+    #content
+      %h1= @item[:title]
+      %p.stamp= @item[:created_at]
+      ~ yield

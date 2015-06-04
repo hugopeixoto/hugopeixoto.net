@@ -4,10 +4,6 @@ include Nanoc::Helpers::LinkTo
 include Nanoc::Helpers::Rendering
 include Nanoc::Helpers::Blogging
 
-def xhtml_attrs(lang)
-  { 'xml:lang' => lang, 'xmlns' => 'http://www.w3.org/1999/xhtml' }
-end
-
 def css_attrs filename, media='screen, projection'
   { :href => filename, :type => 'text/css', :rel => 'stylesheet', :media => media }
 end
