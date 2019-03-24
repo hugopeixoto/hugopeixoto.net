@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://hugopeixoto.net/</id>
+  <title>Hugo Peixoto's blog</title>
+  <updated>2015-08-28T23:00:00Z</updated>
+  <link rel="alternate" href="https://hugopeixoto.net/"/>
+  <link rel="self" href="https://hugopeixoto.net/articles.xml"/>
+  <author>
+    <name>Hugo Peixoto</name>
+    <uri>http://hugopeixoto.net</uri>
+  </author>
+  {{#articles}}
+  <entry>
+    <id>tag:hugopeixoto.net,{{created_at}}:{{path}}</id>
+    <title type="html">{{title}}</title>
+    <published>{{created_at}}T00:00:00Z</published>
+    <updated>{{created_at}}T00:00:00Z</updated>
+    <link rel="alternate" href="https://hugopeixoto.net{{path}}"/>
+    <content type="html">
+      {{body}}
+    </content>
+  </entry>
+  {{/articles}}
+</feed>

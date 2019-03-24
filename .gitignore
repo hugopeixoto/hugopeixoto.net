@@ -1,5 +1,1 @@
-output/
-tmp/
-*.un~
-*.sw?
-.sass-cache/
+/build/
