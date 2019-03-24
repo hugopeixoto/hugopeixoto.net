@@ -1,0 +1,228 @@
+:root {
+  --box_foreground: #FFF8EF;
+  --box_background: #2E2633;
+  --color_foreground: #2E2633;
+  --color-background: white;
+  --box_link: #A97860;
+  --color_link: #AB2346;
+
+  --subheader_foreground: white;
+  --subheader-background: #009DB2;
+
+  --header-foreground: white;
+  --header-background: #AB2346;
+
+  --line: 1.5rem;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: system-ui, serif;
+  line-height: var(--line);
+  outline: 0px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+em {
+  font-style: normal;
+  font-weight: bold;
+}
+
+html {
+  color: var(--color_foreground);
+  padding-bottom: 40px;
+  background-color: var(--color-background);
+  overflow-y: scroll;
+}
+
+body {
+  max-width: 50rem;
+  margin: 0px auto;
+}
+
+html.grid {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    transparent 50%,
+    #eee8 50%,
+    #eee8
+  );
+  background-size: 100% calc(2 * var(--line));
+}
+
+html.grid body {
+  background: repeating-linear-gradient(
+  to right,
+  transparent,
+  transparent var(--line),
+  #eee8 var(--line),
+  #eee8 calc(2 * var(--line))
+  );
+  background-size: 100% calc(2 * var(--line));
+}
+
+
+a, a:visited, a:active {
+  color: var(--color_link);
+  background-color: transparent;
+}
+
+a[rel~=external] {
+  background: url('/external.png') center right no-repeat;
+  padding-right: 10px;
+}
+
+h1, h2 {
+  font-weight: normal;
+
+  font-size: 1.4rem;
+  font-family: 'Varela Round', Arial;
+  padding: 0px;
+  margin: calc(2 * var(--line)) 0px 0px 0px;
+}
+
+h1:first-child, h2:first-child {
+  margin-top: 0px;
+}
+
+h1 {
+  font-size: 1.4rem;
+}
+
+h3 {
+  margin: var(--line) 0px 0px 0px;
+}
+
+#header {
+  display: flex;
+  font-style: normal;
+  color: var(--header-foreground);
+  margin: 0px 0px calc(2 * var(--line)) calc(1 * var(--line));
+}
+
+#header a.fn, #header a.fn:visited, #header a.fn:active {
+  color: var(--header-foreground);
+  background-color: var(--header-background);
+}
+
+#header a.fn {
+  display: block;
+  font-family: 'Varela Round';
+  font-size: 2.5rem;
+  font-weight: normal;
+  height: calc(3 * var(--line));
+  line-height: calc(3 * var(--line));
+  text-align: center;
+  text-decoration: none;
+  width: calc(1.75rem * 11);
+}
+
+#header nav {
+  margin-left: calc(1 * var(--line));
+}
+
+#header nav a {
+  background: linear-gradient(90deg, var(--subheader-background), var(--subheader-background) 100%);
+  background-size: calc(var(--line) / 4) calc(var(--line) / 4);
+  background-position: calc(var(--line) / 2) calc(var(--line) / 2);
+  background-repeat: no-repeat;
+  display: block;
+  min-width: 6rem;
+  padding-left: var(--line);
+  padding-right: 0rem;
+  color: var(--color_link);
+  height: var(--line);
+}
+
+#header nav a:hover {
+  color: white;
+  background-color: var(--header-background);
+}
+
+#content {
+  overflow: auto;
+  margin: 0 var(--line);
+}
+
+#content img {
+  margin: var(--line) 0px;
+}
+
+#content p.stamp {
+  margin-top: 0px;
+  color: var(--subheader-background);
+}
+
+#content pre {
+  margin-top: 0;
+  padding-left: 1rem;
+}
+
+#content .highlighter-coderay {
+  border: 1px solid black;
+  margin-top: var(--line);
+  overflow: auto;
+  padding: calc(var(--line) / 2) 0;
+}
+
+#content pre, #content pre *, code {
+  font-family: monospace;
+}
+
+#content h2 {
+  font-weight: normal;
+  font-size: 1.2em;
+  margin-top: calc(2 * var(--line));
+}
+
+#content h2:first-child {
+  margin-top: 0px;
+}
+
+#content blockquote {
+  padding-left: var(--line);
+  border-left: calc(var(--line) / 4) solid #ccc;
+}
+
+ol.article-list {
+  margin-top: var(--line);
+}
+
+#content > ol, #content > ul {
+  margin: var(--line) 0px;
+  padding-left: 40px;
+}
+
+p {
+  margin-top: var(--line);
+}
+
+p.subheading {
+  margin-top: 0;
+  color: var(--subheader-background);
+}
+
+#content * + h2 {
+  margin-top: calc(2 * var(--line));
+}
+
+#content .tags {
+  font-size: 0.8rem;
+  margin-top: 0px;
+}
+
+#content .tags span {
+  font-size: 0.8rem;
+  color: var(--subheader-background);
+}
+
+dl {
+  position: relative;
+  overflow: auto;
+  margin-top: var(--line);
+}

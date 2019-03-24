@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title>{{title}} - Hugo Peixoto</title>
+
+    <meta name='author' content='Hugo Peixoto'>
+    <meta name='description' content="Personal site of Hugo Peixoto, a computer programming enthusiast and web developer." />
+    <meta name='keywords' content='Hugo Peixoto' />
+    <meta name='language' content='en-US' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel='alternate' href='/articles.xml' type='application/atom+xml' title='Blog' />
+    <link rel='stylesheet' href='/site.css' type='text/css' media='screen, projection' />
+  </head>
+  <body>
+    <div id="header" class="vcard">
+      <a href="/" class="fn">Hugo Peixoto</a>
+
+      <nav>
+        <a href="/about.html">About me</a>
+        <a href="/articles.html">Articles</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+
+    <div id="content" class="article__body">
+      <h1>{{title}}</h1>
+      <p class="subheading">{{created_at}}</p>
+
+      {{{body}}}
+    </div>
+  </body>
+</html>
