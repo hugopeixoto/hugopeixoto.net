@@ -226,3 +226,11 @@ dl {
   overflow: auto;
   margin-top: var(--line);
 }
+
+.avatars {
+  display: flex;
+}
+
+.avatars img {
+  max-width: 100px;
+}.

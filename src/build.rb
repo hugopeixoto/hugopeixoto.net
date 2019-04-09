@@ -10,6 +10,7 @@ require 'kramdown-syntax-coderay'
 `cp src/index.html build/index.html`
 `cp src/site.css build/site.css`
 `cp src/favicon.ico build/favicon.ico`
+`cp -r src/images build/images`
 
 articles = Dir['src/articles/*.yml'].map do |article|
   [
