@@ -126,16 +126,24 @@ h3 {
 }
 
 #header nav a {
-  background: linear-gradient(90deg, var(--subheader-background), var(--subheader-background) 100%);
-  background-size: calc(var(--line) / 4) calc(var(--line) / 4);
-  background-position: calc(var(--line) / 2) calc(var(--line) / 2);
-  background-repeat: no-repeat;
+  color: var(--color_link);
   display: block;
+  height: var(--line);
   min-width: 6rem;
   padding-left: var(--line);
   padding-right: 0rem;
-  color: var(--color_link);
-  height: var(--line);
+  position: relative;
+}
+
+#header nav a:before {
+  background-color: var(--subheader-background);
+  bottom: calc(var(--line) / 4);
+  content: "";
+  display: block;
+  height: calc(var(--line) / 4);
+  left: calc(var(--line) / 2);
+  position: absolute;
+  width: calc(var(--line) / 4);
 }
 
 #header nav a:hover {
