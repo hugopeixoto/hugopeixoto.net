@@ -3,6 +3,7 @@ require 'mustache'
 require 'kramdown'
 require 'kramdown-syntax-coderay'
 
+`rm -rf build/`
 `mkdir -p build/articles/`
 `cp src/about.html build/about.html`
 `cp src/articles/*.png build/articles/`
