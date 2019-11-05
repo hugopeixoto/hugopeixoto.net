@@ -12,8 +12,8 @@ body: |
   uses `decentralized` a lot in its description, so I binned it under
   "blockchain" stuff and didn't pay much attention to it.
 
-  The meetup started with a brief description of what blockstack is, followed by
-  a showcase of apps apps using blockstack built by local folks.
+  The meetup started with a brief description of what blockstack is, followed
+  by a showcase of apps using blockstack built by local folks.
 
   - [Envelop](https://envelop.app/), a very simple free file-sharing app
   - [Blockvault](https://blockvault.site/), a decentralized password manager for teams
