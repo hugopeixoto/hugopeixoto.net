@@ -13,25 +13,46 @@ require 'kramdown-syntax-coderay'
 `cp src/favicon.ico build/favicon.ico`
 `cp -r src/images build/images`
 
-articles = Dir['src/articles/*.yml'].map do |article|
+class YAMLFrontMatter
+  PATTERN = /\A(---\r?\n(.*?)\n?^---\s*$\n?)/m.freeze
+
+  class << self
+    def extract(content)
+      if content =~ PATTERN
+        [YAML.load(Regexp.last_match(2)), content.sub(Regexp.last_match(1), "")]
+      else
+        [{}, content]
+      end
+    end
+  end
+end
+
+articles = Dir['src/articles/*.{md,yml}'].map do |filename|
+  if filename.end_with?(".md")
+    front_matter, template = YAMLFrontMatter.extract(File.read(filename))
+    [filename, front_matter.merge("body" => template)]
+  else
+    [filename, YAML.load(File.read(filename))]
+  end
+end
+
+articles = articles.map do |filename, article|
   [
-    article,
-    YAML.load(File.read(article)).yield_self do |a|
-      a.merge(
-        "body" => Kramdown::Document.new(
-          a["body"],
-          syntax_highlighter: :coderay,
-          syntax_highlighter_opts: { default_lang: :ruby, line_numbers: :table },
-        ).to_html,
-       "path" => article.sub(/.yml$/, '.html').sub(/^src/, ''),
-      )
-    end,
+    filename,
+    article.merge(
+      "body" => Kramdown::Document.new(
+        article["body"],
+        syntax_highlighter: :coderay,
+        syntax_highlighter_opts: { default_lang: :ruby, line_numbers: :table },
+      ).to_html,
+     "path" => filename.sub(/.(yml|md)$/, '.html').sub(/^src/, ''),
+    ),
   ]
 end.sort_by { |a,b| b["created_at"] }.reverse
 
 articles.each do |article, attrs|
   File.write(
-    article.sub(/.yml$/, '.html').sub(/^src/, "build"),
+    article.sub(/.(yml|md)$/, '.html').sub(/^src/, "build"),
     Mustache.render(
       File.read('src/article.html.mustache'),
       attrs,
