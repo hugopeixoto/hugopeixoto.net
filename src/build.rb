@@ -42,8 +42,8 @@ articles = articles.map do |filename, article|
     article.merge(
       "body" => Kramdown::Document.new(
         article["body"],
-        syntax_highlighter: :coderay,
-        syntax_highlighter_opts: { default_lang: :ruby, line_numbers: :table },
+        syntax_highlighter: :rouge,
+        syntax_highlighter_opts: { default_lang: "ruby", line_numbers: :table, span: { disable: true } },
       ).to_html,
      "path" => filename.sub(/.(yml|md)$/, '.html').sub(/^src/, ''),
     ),

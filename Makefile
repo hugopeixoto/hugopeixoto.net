@@ -1,5 +1,8 @@
 all:
-	ruby src/build.rb
+	bundle exec ruby src/build.rb
 
-deploy: all
+build/rouge.css:
+	bundle exec rougify style github > build/rouge.css
+
+deploy: all build/rouge.css
 	rsync -a build/ git.hugopeixoto.net:/srv/www/hugopeixoto.net/public

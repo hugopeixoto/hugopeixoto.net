@@ -53,14 +53,14 @@ submitted anything in a while, so maybe it's easy to get a top20 position.
 
 The first problem was easy. Take in a bunch of numbers, multiply them by a
 constant, and sum the results. Lucky me, because I had to get used to Rust.
-Parsing the input files was the hardest part. I had to each a bunch of numbers,
+Parsing the input files was the hardest part. I had to read a set of numbers,
 one per line, from a file. In ruby, I would do something like:
 
 ~~~~ ruby
 ARGF.readlines.map(&:to_i)
 ~~~~
 
-In rust, I had to deal with a bunch of stuff:
+In rust, I had to deal with some extra stuff:
 
 ~~~~ rust
 use std::io::{self, BufRead};
@@ -107,7 +107,9 @@ fn main() {
 }
 ~~~~
 
-~~~~ bash
+Running `cargo test`:
+
+~~~~terminal?prompt=$,#&output=plaintext%3ftoken=Text&lang=plaintext%3ftoken=Generic.Strong
 hugopeixoto@zephos$ cargo test
    Compiling adventofcode2019 v1.0.0 (challenges/adventofcode/2019)
     Finished test [unoptimized + debuginfo] target(s) in 0.39s
@@ -119,8 +121,8 @@ test tests::test_fuel ... ok
 test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ~~~~
 
-One thing I noted was that I ended up having a single test per function, with a
-bunch of test cases in it. I guess this is a consequence of the type of
+One thing I noted was that I ended up having a single test per function, with
+multiple test cases in it. I guess this is a consequence of the type of
 problems I was solving and the fact that each puzzle was single file.
 
 On the first few days I was actively avoiding calls to `unwrap()`, considering
@@ -131,15 +133,15 @@ One of the puzzles was a maze, where the starting point was marked by a
 character `A`. `fn starting_point(&self) -> (i32, i32)` function would call
 `find(|p, c| c == 'A').unwrap()`. I could have made it return an `Option<(i32,
 i32)>`, but in this context, that would just be noisy. Having it explode and
-looking at the stacktrace would be more helpful than writing a bunch of extra
-code.
+looking at the stacktrace was more helpful than writing code to propagate and
+handle Nones.
 
 Another issue I had was with passing strings around, specially during parsing.
 This was a common pattern in my implementations:
 
 ~~~~ rust
 fn parse(source: &String) -> Vec<(usize, usize)> {
-    map
+    source
         .lines()
         .enumerate()
         .flat_map(|(y, r)| r.chars().enumerate().map(move |(x, c)| (x, y, c)))
@@ -194,7 +196,7 @@ makes this possible. The `parse` function above would become:
 
 ~~~~ rust
 fn parse<'a>(source: &'a String) -> impl Iterator<Item=(usize, usize)> + 'a {
-    map
+    source
         .lines()
         .enumerate()
         .flat_map(|(y, r)| r.chars().enumerate().map(move |(x, c)| (x, y, c)))
@@ -202,13 +204,16 @@ fn parse<'a>(source: &'a String) -> impl Iterator<Item=(usize, usize)> + 'a {
         .map(|(x, y, _)| (x, y))
         // note the lack of collect here
 }
+
+// this would also work:
+// fn parse(source: &String) -> impl Iterator<Item=(usize, usize)> + '_ {
 ~~~~
 
 I also had some hard times dealing with `flat_map`. Since it returns an `impl
-Iterator` that might outlive the scope of the `flat_map` closure, I had a bunch
-of troubles with lifetimes. I ended up almost never using it. Note the `move`
-in the example above, to deal with `y` being borrowed into the inner closure
-that outlives the outer closure.
+Iterator` that might outlive the scope of the `flat_map` closure, I had some
+issues with lifetimes. I ended up almost never using it. Note the `move` in the
+example above, to deal with `y` being borrowed into the inner closure that
+outlives the outer closure.
 
 I missed some features that come with other programming language's standard library.
 These were the extra crates I ended up importing:

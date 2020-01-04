@@ -4,6 +4,6 @@ gem 'builder'
 gem 'coderay'
 gem 'kramdown'
 gem 'kramdown-syntax-coderay'
-gem 'rouge'
+gem 'rouge', git: "https://github.com/hugopeixoto/rouge", branch: "hugopeixoto.cherry-pick"
 gem 'mustache'
 gem 'html-proofer'
