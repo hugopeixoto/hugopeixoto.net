@@ -3,16 +3,6 @@ require 'mustache'
 require 'kramdown'
 require 'kramdown-syntax-coderay'
 
-`rm -rf build/`
-`mkdir -p build/articles/`
-`cp src/about.html build/about.html`
-`cp src/articles/*.png build/articles/`
-`cp src/contact.html build/contact.html`
-`cp src/index.html build/index.html`
-`cp src/site.css build/site.css`
-`cp src/favicon.ico build/favicon.ico`
-`cp -r src/images build/images`
-
 class YAMLFrontMatter
   PATTERN = /\A(---\r?\n(.*?)\n?^---\s*$\n?)/m.freeze
 
@@ -27,36 +17,59 @@ class YAMLFrontMatter
   end
 end
 
-articles = Dir['src/articles/*.{md,yml}'].map do |filename|
-  if filename.end_with?(".md")
-    front_matter, template = YAMLFrontMatter.extract(File.read(filename))
-    [filename, front_matter.merge("body" => template)]
-  else
-    [filename, YAML.load(File.read(filename))]
-  end
+def read_article(filename)
+  contents = File.read(filename)
+  basename = File.basename(filename).sub(/\..*/, '')
+
+  article =
+    if filename.end_with?(".md")
+      front_matter, template = YAMLFrontMatter.extract(contents)
+      front_matter.merge("body" => template)
+    else
+      YAML.load(contents)
+    end
+
+  article.merge(
+    "basename" => basename,
+    "path" => "/articles/#{basename}.html",
+    "isJournal" => article["kind"] == "journal",
+  )
 end
 
-articles = articles.map do |filename, article|
-  [
-    filename,
-    article.merge(
-      "body" => Kramdown::Document.new(
-        article["body"],
-        syntax_highlighter: :rouge,
-        syntax_highlighter_opts: { default_lang: "ruby", line_numbers: :table, span: { disable: true } },
-      ).to_html,
-     "path" => filename.sub(/.(yml|md)$/, '.html').sub(/^src/, ''),
-    ),
-  ]
-end.sort_by { |a,b| b["created_at"] }.reverse
+def apply_markdown(article)
+  parsed = Kramdown::Document.new(
+    article["body"],
+    syntax_highlighter: :rouge,
+    syntax_highlighter_opts: { default_lang: "ruby", line_numbers: :table, span: { disable: true } },
+  )
 
-articles.each do |article, attrs|
+  article.merge(
+    "body" => parsed.to_html,
+    "toc" => parsed.to_toc.children.each.map { |x| { text: x.value.options[:raw_text], id: x.attr[:id] } },
+  )
+end
+
+`rm -rf build/`
+`mkdir -p build/articles/`
+`mkdir -p build/journal/`
+`cp src/about.html build/about.html`
+`cp src/articles/*.png build/articles/`
+`cp src/contact.html build/contact.html`
+`cp src/index.html build/index.html`
+`cp src/site.css build/site.css`
+`cp src/favicon.ico build/favicon.ico`
+`cp -r src/images build/images`
+
+articles =
+  Dir['src/{articles,journal}/*.{md,yml}']
+  .map { |filename| apply_markdown(read_article(filename)) }
+  .sort_by { |article| article["created_at"] }
+  .reverse
+
+articles.each do |article|
   File.write(
-    article.sub(/.(yml|md)$/, '.html').sub(/^src/, "build"),
-    Mustache.render(
-      File.read('src/article.html.mustache'),
-      attrs,
-    ),
+    "build#{article["path"]}",
+    Mustache.render(File.read('src/article.html.mustache'), article),
   )
 end
 
@@ -64,7 +77,7 @@ File.write(
   "build/articles.html",
   Mustache.render(
     File.read('src/articles.html.mustache'),
-    articles: articles.map(&:last),
+    articles: articles,
   ),
 )
 
@@ -72,6 +85,6 @@ File.write(
   "build/articles.xml",
   Mustache.render(
     File.read('src/articles.xml.mustache'),
-    articles: articles.map(&:last),
+    articles: articles,
   ),
 )

@@ -18,12 +18,8 @@
 * {
   margin: 0px;
   padding: 0px;
-  font-family: system-ui, serif;
+  font-family: /*system-ui, */serif;
   line-height: var(--line);
-}
-
-ul {
-  list-style-type: none;
 }
 
 em {
@@ -170,15 +166,29 @@ h3 {
   padding-left: 1rem;
 }
 
-#content .highlighter-coderay {
+#content .highlighter-rouge {
   border: 1px solid black;
   margin-top: var(--line);
   overflow: auto;
   padding: calc(var(--line) / 2) 0;
 }
 
+#content .highlight {
+  background-color: transparent;
+}
+
 #content pre, #content pre *, code {
   font-family: monospace;
+}
+
+#content pre.lineno {
+  padding-left: 0;
+}
+
+#content aside {
+  margin: var(--line) 0;
+  padding: calc(var(--line) / 2);
+  background-color: #eee;
 }
 
 #content h2 {

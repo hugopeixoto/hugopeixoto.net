@@ -28,6 +28,19 @@
     <div id="content" class="article__body">
       <h1>{{title}}</h1>
       <p class="subheading">{{created_at}}</p>
+      {{#isJournal}}
+        <aside>
+          This is a <code>[journal]</code> entry. It is longer than usual and
+          more exploratory. It may have no proper conclusion.
+        </aside>
+      {{/isJournal}}
+
+      <h2>Table of contents</h2>
+      <ul>
+      {{#toc}}
+        <li><a href="#{{id}}">{{text}}</a></li>
+      {{/toc}}
+      </ul>
 
       {{{body}}}
     </div>

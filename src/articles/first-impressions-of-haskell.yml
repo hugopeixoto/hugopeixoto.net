@@ -110,7 +110,7 @@ body: |
 
   In C++, the dynamic programming approach could be implemented as follows:
 
-  ~~~~ cc
+  ~~~~ c++
   const int MAX_N = 100;
   int fib[MAX_N+1];
 
