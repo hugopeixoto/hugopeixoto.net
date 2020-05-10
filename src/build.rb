@@ -46,6 +46,7 @@ def apply_markdown(article)
   article.merge(
     "body" => parsed.to_html,
     "toc" => parsed.to_toc.children.each.map { |x| { text: x.value.options[:raw_text], id: x.attr[:id] } },
+    "hasTOC" => parsed.to_toc.children.any?,
   )
 end
 

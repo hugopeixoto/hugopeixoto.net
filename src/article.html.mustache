@@ -35,12 +35,14 @@
         </aside>
       {{/isJournal}}
 
+      {{#hasTOC}}
       <h2>Table of contents</h2>
       <ul>
       {{#toc}}
         <li><a href="#{{id}}">{{text}}</a></li>
       {{/toc}}
       </ul>
+      {{/hasTOC}}
 
       {{{body}}}
     </div>
