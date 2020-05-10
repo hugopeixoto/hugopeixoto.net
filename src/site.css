@@ -156,6 +156,10 @@ h3 {
   margin: var(--line) 0px;
 }
 
+#content a {
+  overflow-wrap: break-word;
+}
+
 #content p.stamp {
   margin-top: 0px;
   color: var(--subheader-background);

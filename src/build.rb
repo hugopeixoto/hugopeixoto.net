@@ -40,7 +40,11 @@ def apply_markdown(article)
   parsed = Kramdown::Document.new(
     article["body"],
     syntax_highlighter: :rouge,
-    syntax_highlighter_opts: { default_lang: "ruby", line_numbers: :table, span: { disable: true } },
+    syntax_highlighter_opts: {
+      default_lang: "terminal?prompt=$,#&output=plaintext%3ftoken=Text&lang=plaintext%3ftoken=Generic.Strong",
+      line_numbers: :table,
+      span: { disable: true },
+    },
   )
 
   article.merge(
