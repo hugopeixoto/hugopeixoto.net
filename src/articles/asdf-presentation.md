@@ -7,7 +7,7 @@ excerpt: |
 ---
 
 I did a lighting presentation on [asdf](https://asdf-vm.com), at Porto Codes.
-It was in portuguese, but the recording is now available on youtube:
+The recording is now available on youtube (in portuguese):
 
 <https://www.youtube.com/watch?v=RaMRU4MVm5g>
 
@@ -17,4 +17,4 @@ It was in portuguese, but the recording is now available on youtube:
 
 You should also check out the other talks published by Porto codes:
 
-<https://mobile.twitter.com/portocodes>
+<https://twitter.com/portocodes>
