@@ -3,12 +3,14 @@ created_at: 2009-06-09
 excerpt:
   OpenID at FEUP.
 body: |
-  Early this year, a friend of mine at [NIFEUP](http://ni.fe.up.pt/) (our local
-  informatics students' group) developed an application similar to rapidshare
-  (named [feupload](https://feupload.fe.up.pt), although free and limited to our
-  Faculty members. This application used LDAP server as a means to authenticate
-  the users — you just had to insert your campus credentials, and an account
-  would be automatically created.
+  Early this year, a friend of mine at
+  [NIFEUP](https://web.archive.org/web/20090218234900/http://ni.fe.up.pt/) (our
+  local informatics students' group) developed an application similar to
+  rapidshare (named
+  [feupload](https://web.archive.org/web/20110615185519/http://feupload.fe.up.pt/),
+  although free and limited to our Faculty members. This application used LDAP
+  server as a means to authenticate the users — you just had to insert your
+  campus credentials, and an account would be automatically created.
 
   This mechanism, although promoting usability, leads to the usual trust issue:
   *you have to give away your credentials to a third party* in order to use the
@@ -39,10 +41,10 @@ body: |
   as email address, full name, country, etc. Of course, this requires the user's
   permission. Or at least, it should.
 
-  So, me and [Pedro Coelho](http://pedrocoelho.pt) proposed
-  implementing this service so that it can be used with our faculty's
-  credentials. Obviously, it will be deployed and validated by our IT department
-  so that the users can trust the service.
+  So, me and [Pedro Coelho](https://ethereal.io/) proposed implementing this
+  service so that it can be used with our faculty's credentials. Obviously, it
+  will be deployed and validated by our IT department so that the users can
+  trust the service.
 
   Yesterday, we completed the first stage — we achieved OpenID 1.1 full
   compliance:
