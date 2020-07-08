@@ -104,13 +104,13 @@ Interface Internet - eth0: 
 =============================
 IP/Host:
 Endereços IP Secundários:  
-Hostname: [CENSORED]
+Hostname: [REDACTED]
 
 SSH v2:
 =============================
 IP/Host:
 Login: hugo.peixoto@gmail.com
-Password: [CENSORED]
+Password: [REDACTED]
 Porta: 22
 ~~~~
 
