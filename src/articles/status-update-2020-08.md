@@ -2,6 +2,8 @@
 kind: article
 title: Status update, July 2020
 created_at: 2020-08-01
+excerpt: |
+  Time for a new monthly update.
 ---
 
 Time for a new monthly update.
