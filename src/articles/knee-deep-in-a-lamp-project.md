@@ -510,4 +510,4 @@ to keep track of indexes.
 
 But before I do any of that, I want to spend some more time optimizing the
 existing pages. Let's see if I can get anything done before this year's
-[SGQD](https://gamesdonequick.com/).
+[SGDQ](https://gamesdonequick.com/).
