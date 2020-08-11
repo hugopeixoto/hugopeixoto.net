@@ -2,7 +2,11 @@
 kind: article
 title: Knee deep in a LAMP project
 created_at: 2020-08-08
-excerpt:
+excerpt: |
+  I've been lending a hand with the development of Cyberscore. It's a video
+  game records community with almost 20 years of existence. I have a friend
+  that sometimes helps out with maintenance, and they were having some issues
+  so I decided to help out as well.
 ---
 
 I've been lending a hand with the development of

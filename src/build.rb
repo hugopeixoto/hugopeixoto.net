@@ -47,8 +47,19 @@ def apply_markdown(article)
     },
   )
 
+  excerpt = article["excerpt"] ? Kramdown::Document.new(
+    article["excerpt"],
+    syntax_highlighter: :rouge,
+    syntax_highlighter_opts: {
+      default_lang: "terminal?prompt=$,#&output=plaintext%3ftoken=Text&lang=plaintext%3ftoken=Generic.Strong",
+      line_numbers: :table,
+      span: { disable: true },
+    },
+  ).to_html : nil
+
   article.merge(
     "body" => parsed.to_html,
+    "excerpt" => excerpt,
     "toc" => parsed.to_toc.children.each.map { |x| { text: x.value.options[:raw_text], id: x.attr[:id] } },
     "hasTOC" => parsed.to_toc.children.any?,
   )
