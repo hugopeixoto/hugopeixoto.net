@@ -181,6 +181,10 @@ h3 {
   background-color: transparent;
 }
 
+p > code {
+  font-size: 1rem;
+}
+
 #content pre, #content pre *, code {
   font-family: monospace;
 }
