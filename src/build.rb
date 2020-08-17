@@ -71,7 +71,6 @@ end
 `cp src/about.html build/about.html`
 `cp src/articles/*.png build/articles/`
 `cp src/contact.html build/contact.html`
-`cp src/index.html build/index.html`
 `cp src/site.css build/site.css`
 `cp src/favicon.ico build/favicon.ico`
 `cp -r src/images build/images`
@@ -102,5 +101,13 @@ File.write(
   Mustache.render(
     File.read('src/articles.xml.mustache'),
     articles: articles,
+  ),
+)
+
+File.write(
+  "build/index.html",
+  Mustache.render(
+    File.read('src/index.html.mustache'),
+    articles: articles.take(3),
   ),
 )
