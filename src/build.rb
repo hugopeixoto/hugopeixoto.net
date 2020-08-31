@@ -41,7 +41,7 @@ def apply_markdown(article)
     article["body"],
     syntax_highlighter: :rouge,
     syntax_highlighter_opts: {
-      default_lang: "terminal?prompt=$,#&output=plaintext%3ftoken=Text&lang=plaintext%3ftoken=Generic.Strong",
+      default_lang: "terminal?prompt=$,#&output=plaintext&output.token=Text&lang=plaintext&lang.token=Generic.Strong",
       line_numbers: :table,
       span: { disable: true },
     },
@@ -70,6 +70,7 @@ end
 `mkdir -p build/journal/`
 `cp src/about.html build/about.html`
 `cp src/articles/*.png build/articles/`
+`cp src/articles/*.webm build/articles/`
 `cp src/contact.html build/contact.html`
 `cp src/site.css build/site.css`
 `cp src/favicon.ico build/favicon.ico`

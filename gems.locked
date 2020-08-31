@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/hugopeixoto/rouge
-  revision: 574cb47e25ae517333cbdf90f0cfd887256a4b6e
+  revision: 2c1af0c93152c888297e74bd3506b45c0de385a9
   branch: hugopeixoto.cherry-pick
   specs:
-    rouge (3.14.0)
+    rouge (3.22.0)
 
 GEM
   remote: https://rubygems.org/
@@ -36,7 +36,7 @@ GEM
     nokogumbo (2.0.2)
       nokogiri (~> 1.8, >= 1.8.4)
     parallel (1.19.2)
-    public_suffix (4.0.5)
+    public_suffix (4.0.6)
     rainbow (3.0.0)
     rexml (3.2.4)
     typhoeus (1.4.0)
