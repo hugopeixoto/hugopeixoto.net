@@ -102,6 +102,7 @@ File.write(
   Mustache.render(
     File.read('src/articles.xml.mustache'),
     articles: articles,
+    updated_at: articles.map {|x|x["created_at"]}.max,
   ),
 )
 
