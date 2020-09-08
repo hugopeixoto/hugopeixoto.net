@@ -35,10 +35,10 @@ I decided to use the bevy release and games made quick as an excuse to practice
 some more rust, and maybe even release something. Spoilers: I wasn't able to
 finish anything yet, but I did learn a bit about ECS in the process.
 
-In this post I'll describe my vision of ECS is, where it comes from, and its
-benefits. In future posts, I will talk about my experience with bevy with some
-code examples from my demo, and describe what my issues with ECS are, for this
-particular game.
+In this post I'll describe my vision of what ECS is, where it comes from, and
+its benefits. In future posts, I will talk about my experience with bevy with
+some code examples from my demo, and describe what my issues with ECS are, for
+this particular game.
 
 > Note: The examples follow the C++ syntax, but they're mostly pseudocode. I
 > tried to make it as close to the real thing as possible, but some shortcuts
