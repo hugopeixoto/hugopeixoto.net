@@ -17,6 +17,10 @@ class YAMLFrontMatter
   end
 end
 
+def human_date(date)
+  date.strftime("%B %d, %Y")
+end
+
 def read_article(filename)
   contents = File.read(filename)
   basename = File.basename(filename).sub(/\..*/, '')
@@ -33,6 +37,7 @@ def read_article(filename)
     "basename" => basename,
     "path" => "/articles/#{basename}.html",
     "isJournal" => article["kind"] == "journal",
+    "human_created_at" => human_date(article["created_at"])
   )
 end
 

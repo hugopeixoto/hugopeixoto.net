@@ -9,6 +9,13 @@ excerpt: |
   so I decided to help out as well.
 ---
 
+<aside markdown="1">
+  I am accepting sponsors via github: <https://github.com/sponsors/hugopeixoto>
+
+  If you enjoy my work, consider sponsoring me so I can keep on doing this full
+  time.
+</aside>
+
 I've been lending a hand with the development of
 [Cyberscore](https://www.cyberscore.me.uk/). It's a video game records
 community with almost 20 years of existence. I have a friend that sometimes

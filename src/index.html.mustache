@@ -20,7 +20,7 @@
     <meta property="og:image" content="https://hugopeixoto.net/images/logo.png" />
   </head>
   <body>
-    <header id="header" class="vcard">
+    <header class="vcard">
       <a href="/" class="fn">Hugo Peixoto</a>
 
       <nav>
@@ -30,6 +30,8 @@
       </nav>
     </header>
     <main id="content">
+      <h1>Introduction</h1>
+
       <p>Hello, I'm Hugo Peixoto, and I like programming and fixing bugs.</p>
 
       <p>
@@ -55,7 +57,7 @@
       {{#articles}}
       <article>
         <h3><a href="{{path}}">{{title}}</a></h3>
-        <p class="subheading">{{created_at}}</p>
+        <p class="post-date">Published on {{human_created_at}}</p>
 
         {{{excerpt}}}
         <p><a href="{{path}}">Read more</a></p>

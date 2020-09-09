@@ -6,13 +6,14 @@ excerpt: |
   Time for a new monthly update.
 ---
 
+<aside markdown="1">
+  I am accepting sponsors via github: <https://github.com/sponsors/hugopeixoto>
+
+  If you enjoy my work, consider sponsoring me so I can keep on doing this full
+  time.
+</aside>
+
 Time for a new monthly update.
-
-I started accepting sponsors via github:
-
-<https://github.com/sponsors/hugopeixoto>
-
-If you enjoy my work, consider sponsoring me so I can keep on doing this full time.
 
 After [some tribulations](/articles/portuguese-vps-providers.html), I decided
 on a local VPS provider for the Mentorados project. I used

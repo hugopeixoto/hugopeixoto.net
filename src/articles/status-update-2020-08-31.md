@@ -6,9 +6,12 @@ excerpt: |
   August is over, time for a new monthly update.
 ---
 
-> I am accepting sponsors via github: <https://github.com/sponsors/hugopeixoto>
->
-> If you enjoy my work, consider sponsoring me so I can keep on doing this full time.
+<aside markdown="1">
+  I am accepting sponsors via github: <https://github.com/sponsors/hugopeixoto>
+
+  If you enjoy my work, consider sponsoring me so I can keep on doing this full
+  time.
+</aside>
 
 August is over, time for a new monthly update.
 

@@ -18,7 +18,7 @@
 * {
   margin: 0px;
   padding: 0px;
-  font-family: /*system-ui, */serif;
+  font-family: serif;
   line-height: var(--line);
 }
 
@@ -37,46 +37,18 @@ html {
 body {
   max-width: 50rem;
   margin: 0px auto;
+  word-break: break-word;
 }
-
-html.grid {
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    transparent 50%,
-    #eee8 50%,
-    #eee8
-  );
-  background-size: 100% calc(2 * var(--line));
-}
-
-html.grid body {
-  background: repeating-linear-gradient(
-  to right,
-  transparent,
-  transparent var(--line),
-  #eee8 var(--line),
-  #eee8 calc(2 * var(--line))
-  );
-  background-size: 100% calc(2 * var(--line));
-}
-
 
 a, a:visited, a:active {
   color: var(--color_link);
-  background-color: transparent;
-}
-
-a[rel~=external] {
-  background: url('/external.png') center right no-repeat;
-  padding-right: 10px;
 }
 
 h1, h2 {
   font-weight: normal;
 
   font-size: 1.4rem;
-  font-family: 'Varela Round', Arial;
+  font-family: Arial, sans-serif;
   padding: 0px;
   margin: calc(2 * var(--line)) 0px 0px 0px;
 }
@@ -90,22 +62,23 @@ h1 {
 }
 
 h3 {
+  font-size: 1rem;
   margin: var(--line) 0px 0px 0px;
 }
 
-#header {
+header {
   display: flex;
   font-style: normal;
   color: var(--header-foreground);
-  margin: 0px 0px calc(2 * var(--line)) calc(1 * var(--line));
+  margin: 0px 0px calc(var(--line)) 1em;
 }
 
-#header a.fn, #header a.fn:visited, #header a.fn:active {
+header a.fn, header a.fn:visited, header a.fn:active {
   color: var(--header-foreground);
   background-color: var(--header-background);
 }
 
-#header a.fn {
+header a.fn {
   display: block;
   font-family: 'Varela Round';
   font-size: 2.5rem;
@@ -117,11 +90,11 @@ h3 {
   width: calc(1.75rem * 11);
 }
 
-#header nav {
+header nav {
   margin-left: calc(1 * var(--line));
 }
 
-#header nav a {
+header nav a {
   color: var(--color_link);
   display: block;
   height: var(--line);
@@ -131,7 +104,7 @@ h3 {
   position: relative;
 }
 
-#header nav a:before {
+header nav a:before {
   background-color: var(--subheader-background);
   bottom: calc(var(--line) / 4);
   content: "";
@@ -142,14 +115,14 @@ h3 {
   width: calc(var(--line) / 4);
 }
 
-#header nav a:hover {
+header nav a:hover {
   color: white;
   background-color: var(--header-background);
 }
 
 #content {
   overflow: auto;
-  margin: 0 var(--line);
+  margin: 0 1em;
 }
 
 #content img {
@@ -165,20 +138,29 @@ h3 {
   color: var(--subheader-background);
 }
 
-#content pre {
+#content pre pre {
   margin-top: 0;
-  padding-left: 1rem;
+  padding-left: 0.5rem;
 }
 
 #content .highlighter-rouge {
   border: 1px solid black;
   margin-top: var(--line);
   overflow: auto;
-  padding: calc(var(--line) / 2) 0;
 }
 
 #content .highlight {
   background-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  word-break: normal;
+}
+
+#content .highlight .rouge-table { border-collapse: collapse; }
+#content .highlight .rouge-code { padding: 0px; }
+#content .highlight .rouge-gutter.gl {
+  padding: 0rem 0.25rem 0px 0.25rem;
+  background-color: #f0f0f0;
+  text-align: right;
 }
 
 p > code {
@@ -196,7 +178,7 @@ p > code {
 #content aside {
   margin: var(--line) 0;
   padding: calc(var(--line) / 2);
-  background-color: #eee;
+  background-color: #f0f0f0;
 }
 
 #content h2 {
@@ -223,33 +205,16 @@ ol.article-list {
   padding-left: 40px;
 }
 
-p {
+p:nth-child(n+2) {
   margin-top: var(--line);
 }
 
-p.subheading {
+p.post-date {
   margin-top: 0;
-  color: var(--subheader-background);
 }
 
 #content * + h2 {
-  margin-top: calc(2 * var(--line));
-}
-
-#content .tags {
-  font-size: 0.8rem;
-  margin-top: 0px;
-}
-
-#content .tags span {
-  font-size: 0.8rem;
-  color: var(--subheader-background);
-}
-
-dl {
-  position: relative;
-  overflow: auto;
-  margin-top: var(--line);
+  margin-top: calc(1 * var(--line));
 }
 
 .avatars {
@@ -258,4 +223,4 @@ dl {
 
 .avatars img {
   max-width: 100px;
-}.
+}
