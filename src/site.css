@@ -45,10 +45,7 @@ a, a:visited, a:active {
 }
 
 h1, h2 {
-  font-weight: normal;
-
   font-size: 1.4rem;
-  font-family: Arial, sans-serif;
   padding: 0px;
   margin: calc(2 * var(--line)) 0px 0px 0px;
 }
@@ -182,7 +179,7 @@ p > code {
 }
 
 #content h2 {
-  font-weight: normal;
+  font-weight: bold;
   font-size: 1.2em;
   margin-top: calc(2 * var(--line));
 }
