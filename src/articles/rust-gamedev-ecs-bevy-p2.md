@@ -1,7 +1,7 @@
 ---
 kind: article
 title: Rust, gamedev, ECS, and bevy - Part 2
-created_at: 2020-09-14
+created_at: 2020-09-24
 excerpt: |
 ---
 
