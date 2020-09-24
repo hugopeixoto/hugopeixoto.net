@@ -3,6 +3,11 @@ kind: article
 title: Rust, gamedev, ECS, and bevy - Part 2
 created_at: 2020-09-24
 excerpt: |
+  In [Part 1](/articles/rust-gamedev-ecs-bevy.html) of this series, I talked
+  about what ECS is and what it's good for. In this post, I'll translate those
+  concepts to [bevy](https://bevyengine.org), with some code examples. I'll
+  finish with the issues I found in bevy and how ECS is kind of the opposite of
+  how I'm used to thinking.
 ---
 
 <aside markdown="1">
