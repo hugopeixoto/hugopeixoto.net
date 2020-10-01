@@ -89,3 +89,8 @@ One of the advantages of starting from scratch is that I had to update my
 the opportunity to document (in my private notes.git) the installation process
 and which packages I usually need. I'll try to figure out the best way to make
 this public.
+
+<aside markdown="1">
+  If you enjoy my work, consider sponsoring me so I can keep on doing this full
+  time: <https://github.com/sponsors/hugopeixoto>
+</aside>
