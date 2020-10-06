@@ -1,3 +1,3 @@
 # hugopeixoto.net
 
-My personal homepage, built using {ruby}[http://www.ruby-lang.org].
+My [personal homepage](https://hugopeixoto.net), built using [ruby](https://www.ruby-lang.org).
