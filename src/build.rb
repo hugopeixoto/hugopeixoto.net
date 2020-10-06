@@ -90,14 +90,14 @@ articles =
 articles.each do |article|
   File.write(
     "build#{article["path"]}",
-    Mustache.render(File.read('src/article.html.mustache'), article),
+    Mustache.render(File.read('src/templates/article.html.mustache'), article),
   )
 end
 
 File.write(
   "build/articles.html",
   Mustache.render(
-    File.read('src/articles.html.mustache'),
+    File.read('src/templates/articles.html.mustache'),
     articles: articles,
   ),
 )
@@ -105,7 +105,7 @@ File.write(
 File.write(
   "build/articles.xml",
   Mustache.render(
-    File.read('src/articles.xml.mustache'),
+    File.read('src/templates/articles.xml.mustache'),
     articles: articles,
     updated_at: articles.map {|x|x["created_at"]}.max,
   ),
@@ -114,7 +114,7 @@ File.write(
 File.write(
   "build/index.html",
   Mustache.render(
-    File.read('src/index.html.mustache'),
+    File.read('src/templates/index.html.mustache'),
     articles: articles.take(3),
   ),
 )
