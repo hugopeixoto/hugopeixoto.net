@@ -38,10 +38,10 @@ ease of use.
 
 My goal was to build something with the following endpoints:
 
-- `GET /`, returns an HTML page with a form with a file field
-- `POST /file`, receives an image, stores it, and redirects to the display page
-- `GET /image/<id>`, returns an HTML page displaying the uploaded image
-- `GET /image/raw/<id>`, returns the raw contents
+- `GET /`: returns an HTML page with a form with a file field
+- `POST /file`: receives an image, stores it, and redirects to the display page
+- `GET /image/<id>`: returns an HTML page displaying the uploaded image
+- `GET /image/raw/<id>`: returns the raw contents
 
 Since this is a simple app, I decided to go minimal, to minimize the framework
 requirements. No database, files would be stored directly on disk. No html
@@ -433,7 +433,7 @@ where files should be located and having a [generator
 cli](https://guides.rubyonrails.org/command_line.html#rails-generate) are
 things that help you getting started.
 
-This also led me to the [arewewebyet
+This also led me to the [AreWeWebYet
 repository](https://github.com/rust-lang/arewewebyet). I noticed that there are
 a lot of outdated and duplicate issues, so I tried to help by reviewing some of
 them.

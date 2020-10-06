@@ -160,7 +160,7 @@ header nav a:hover {
   text-align: right;
 }
 
-p > code {
+p > code, a > code, li > code {
   font-size: 1rem;
 }
 

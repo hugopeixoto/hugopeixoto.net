@@ -54,7 +54,7 @@
 
       <h2>Latest articles</h2>
 
-      {{#articles}}
+      {{#recent_articles}}
       <article>
         <h3><a href="{{path}}">{{title}}</a></h3>
         <p class="post-date">Published on {{human_created_at}}</p>
@@ -62,7 +62,7 @@
         {{{excerpt}}}
         <p><a href="{{path}}">Read more</a></p>
       </article>
-      {{/articles}}
+      {{/recent_articles}}
 
       <p>You can also check the <a href="/articles.html">full article archive</a>.</p>
     </main>
