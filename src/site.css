@@ -162,6 +162,9 @@ header nav a:hover {
 
 p > code, a > code, li > code {
   font-size: 1rem;
+  background-color: #FDD;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 #content pre, #content pre *, code {
