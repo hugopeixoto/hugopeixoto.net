@@ -61,7 +61,7 @@ def apply_markdown(article)
   md_options =  {
     syntax_highlighter: :rouge,
     syntax_highlighter_opts: {
-      default_lang: "terminal?prompt=$,#&output=plaintext&output.token=Text&lang=plaintext&lang.token=Generic.Strong",
+      default_lang: "terminal?prompt=$ ,# &output=plaintext&output.token=Text&lang=plaintext&lang.token=Generic.Strong",
       line_numbers: :table,
       span: { disable: true },
     },
