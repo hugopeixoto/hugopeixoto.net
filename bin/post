@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'date'
+
+filename = ARGV[0]
+
+template = <<~TEMPLATE
+  ---
+  kind: article
+  title: TODO Title
+  created_at: #{Date.today}
+  excerpt: |
+    TODO Excerpt
+  ---
+
+  <aside markdown="1">
+    If you enjoy my work, consider sponsoring me so I can keep on doing this full
+    time: <https://github.com/sponsors/hugopeixoto>
+  </aside>
+
+  TODO body
+
+  <aside markdown="1">
+    If you enjoy my work, consider sponsoring me so I can keep on doing this full
+    time: <https://github.com/sponsors/hugopeixoto>
+  </aside>
+TEMPLATE
+
+File.write("src/articles/#{filename}.md", template)
