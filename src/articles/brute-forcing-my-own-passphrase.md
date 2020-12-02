@@ -79,13 +79,12 @@ for passphrase in passphrases:
     break
 ~~~~
 
-There's probably a `flatmap` or a nested comprehension list I could use in
-`expandall`, but I just wanted this to work and I'm not super familiar with
-python. Using variable names like `f` and `x` is a good indication that I was
-in "just write some code" mode. I don't even know why I fall back to python for
-these kinds of scripts, instead of going with ruby. Maybe it's because when I'm
-writing ruby I automatically go into "let's write this in a single chain of
-method calls" mode?
+I could probably use a `flatmap` or a nested comprehension list in `expandall`,
+but I just wanted this to work. Using variable names like `f` and `x` is a good
+indication that I was in "just write some code" mode. I don't even know why I
+fall back to python for these kinds of scripts, instead of going with ruby.
+Maybe it's because when I'm writing ruby I automatically go into "let's write
+this in a single chain of method calls" mode?
 
 Anyway, if you feed `expand` something like `"{w,W}hy{ ,}python{?,?!}"`, it
 would generate a list of `2*2*2=8` strings:
