@@ -1,0 +1,39 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'date'
+
+tmpdate =
+  Dir['src/articles/status-update-*']
+  .max
+  .match(/status-update-(.*).md/)[1]
+  .then { |d| Date.parse(d) }
+  .next_month
+
+date = Date.new(tmpdate.year, tmpdate.month, -1)
+
+filename = "status-update-#{date}"
+
+template = <<~TEMPLATE
+  ---
+  kind: article
+  title: Status update, #{date.strftime('%B')} #{date.year}
+  created_at: #{Date.today}
+  excerpt: |
+    TODO Excerpt
+  ---
+
+  <aside markdown="1">
+    If you enjoy my work, consider sponsoring me so I can keep on doing this full
+    time: <https://github.com/sponsors/hugopeixoto>
+  </aside>
+
+  TODO body
+
+  <aside markdown="1">
+    If you enjoy my work, consider sponsoring me so I can keep on doing this full
+    time: <https://github.com/sponsors/hugopeixoto>
+  </aside>
+TEMPLATE
+
+File.write("src/articles/#{filename}.md", template)

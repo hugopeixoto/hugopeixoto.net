@@ -104,7 +104,7 @@ repository that I don't necessarily want to end up being web served, like a
 
 ## AlumniEI mentorados
 
-I groomed the issues list added some setup isntructions and contributing
+I groomed the issues list added some setup instructions and contributing
 guidelines. We decided to [license the code as AGPL][mentorados-agpl].
 
 ## Conversas em Código Podcast
