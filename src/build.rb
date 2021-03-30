@@ -107,6 +107,7 @@ data = {
 `rm -rf build/`
 `mkdir -p build/articles/`
 `cp src/articles/*.png build/articles/`
+`cp src/articles/*.jpg build/articles/`
 `cp src/articles/*.webm build/articles/`
 `cp src/site.css build/site.css`
 `cp src/favicon.ico build/favicon.ico`

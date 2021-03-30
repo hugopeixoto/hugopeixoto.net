@@ -224,3 +224,9 @@ p.post-date {
 .avatars img {
   max-width: 100px;
 }
+
+#content #kabutops {
+  max-height: 400px;
+  margin: 0px auto;
+  display: block;
+}
