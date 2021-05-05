@@ -37,7 +37,7 @@ finished implementing it. I also implemented language detection based on
 
 On April 24th, a group of people joined our discord and started bragging that the
 website was now theirs. They had found a way to login as any user. Since no one
-from the staff team was online at the time, they got not attention so they
+from the staff team was online at the time, they got no attention so they
 started escalating the damage and eventually found a way to our builtin SQL
 editor and dropped every database table.
 
