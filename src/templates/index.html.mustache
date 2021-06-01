@@ -33,7 +33,10 @@
     <main id="content">
       <h1>Introduction</h1>
 
-      <p>Hello, I'm Hugo Peixoto, and I like programming and fixing bugs.</p>
+      <p>
+        Hello, I'm Hugo Peixoto, aka <code>wiki</code> in some places, and I
+        like programming and fixing bugs.
+      </p>
 
       <p>
         Using software is a great way of finding bugs in it. Every time I find
@@ -43,9 +46,14 @@
 
       <p>
         I'm one of the two organizers of <a href='https://porto.codes'>Porto
-        codes</a>, a monthly programming meetup. I also have a podcast in
-        portuguese:
+        codes</a>, a monthly programming meetup.
+
+        I also have a podcast in portuguese:
         <a lang="pt" href='https://conversas.porto.codes'>Conversas em Código</a>,
+
+        I'm a developer of <a href="https://cyberscore.me.uk">Cyberscore</a>, a video game records community,
+
+        and of <a href="https://fzerocentral.org">F-Zero Central</a>, a community of F-Zero fans.
       </p>
 
       <p>
@@ -53,19 +61,16 @@
         if you enjoy my work. It helps me keep going.
       </p>
 
-      <h2>Latest articles</h2>
+      <h2>Latest articles <span>(<a href="/articles.html">view all</a>)</span></h2>
 
       {{#recent_articles}}
       <article>
         <h3><a href="{{path}}">{{title}}</a></h3>
-        <p class="post-date">Published on {{human_created_at}}</p>
+        <p class="post-date">{{human_created_at}}</p>
 
         {{{excerpt}}}
-        <p><a href="{{path}}">Read more</a></p>
       </article>
       {{/recent_articles}}
-
-      <p>You can also check the <a href="/articles.html">full article archive</a>.</p>
     </main>
   </body>
 </html>

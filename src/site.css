@@ -221,12 +221,22 @@ p.post-date {
   display: flex;
 }
 
+.avatars li {
+  list-style-type: none;
+}
+
 .avatars img {
   max-width: 100px;
 }
 
 #content #kabutops {
   max-height: 400px;
+  margin: 0px auto;
+  display: block;
+}
+
+#content #crimping {
+  max-width: 600px;
   margin: 0px auto;
   display: block;
 }
