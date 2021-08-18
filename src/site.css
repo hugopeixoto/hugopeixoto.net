@@ -192,6 +192,7 @@ p > code, a > code, li > code {
 }
 
 #content blockquote {
+  margin-top: var(--line);
   padding-left: var(--line);
   border-left: calc(var(--line) / 4) solid #ccc;
 }
