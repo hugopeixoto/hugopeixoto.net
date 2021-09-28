@@ -8,7 +8,7 @@ excerpt: |
 
 I've published a new episode of Conversas em Código (in Portuguese):
 
-[Episode 30: Participação na RustConf 2021](https://conversas.porto.codes/episodes/participacao-na-rustconf-2021)
+[Episode 31: Participação na RustConf 2021](https://conversas.porto.codes/episodes/participacao-na-rustconf-2021)
 
 > Neste episódio falamos sobre a experiência do Peixoto em fazer uma
 > apresentação na RustConf 2021.
