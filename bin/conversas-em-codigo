@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+
+require 'nokogiri'
+require 'net/http'
+require 'date'
+
+epno = ARGV[0]
+
+doc = Nokogiri::XML(Net::HTTP.get(URI('https://feeds.simplecast.com/lc7MGv1u')))
+
+post = doc
+  .xpath("//channel/item")
+  .find { |item| item.xpath("itunes:episode").text == epno }
+
+title = post.xpath("title").text.gsub(/Ep\. \d+ - /, "")
+url = post.xpath("link").text.gsub(/-[^-]+$/, "")
+summary = post.xpath("itunes:summary").text
+pubdate = Date.parse(post.xpath("pubDate").text)
+
+template = <<~TEMPLATE
+  ---
+  kind: article
+  title: "Conversas em Código Episode ##{epno} released"
+  created_at: #{pubdate}
+  excerpt:
+    I've published a new episode of Conversas em Código - [Episode #{epno}: #{title}](#{url})
+  ---
+
+  I've published a new episode of Conversas em Código (in Portuguese):
+
+  [Episode #{epno}: #{title}](#{url})
+
+  > #{summary}
+
+  See the full episode list here:
+
+  <https://conversas.porto.codes>
+TEMPLATE
+
+File.write("src/articles/conversas-em-codigo-episode-#{epno}.md", template)
