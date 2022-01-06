@@ -28,6 +28,9 @@ GEM
     kramdown-syntax-coderay (1.0.1)
       coderay (~> 1.1)
       kramdown (~> 2.0)
+    listen (3.7.0)
+      rb-fsevent (~> 0.10, >= 0.10.3)
+      rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
     mini_portile2 (2.6.1)
     mustache (1.1.1)
@@ -40,9 +43,13 @@ GEM
     public_suffix (4.0.6)
     racc (1.5.2)
     rainbow (3.0.0)
+    rb-fsevent (0.11.0)
+    rb-inotify (0.10.1)
+      ffi (~> 1.0)
     rexml (3.2.5)
     typhoeus (1.4.0)
       ethon (>= 0.9.0)
+    webrick (1.7.0)
     yell (2.2.2)
 
 PLATFORMS
@@ -54,8 +61,10 @@ DEPENDENCIES
   html-proofer
   kramdown
   kramdown-syntax-coderay
+  listen
   mustache
   rouge!
+  webrick
 
 BUNDLED WITH
    2.2.15
