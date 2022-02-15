@@ -114,6 +114,7 @@ module Builder
     `cp src/site.css build/site.css`
     `cp src/favicon.ico build/favicon.ico`
     `cp -r src/images build/images`
+    `bundle exec rougify style github > build/rouge.css`
 
     render("about.html", data)
     render("articles.html", data)
