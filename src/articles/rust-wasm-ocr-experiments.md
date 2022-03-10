@@ -224,9 +224,25 @@ document
 The `wasm` file is loaded by `pla_ocr.js` using a relative URL, but it can be
 passed to `init` if the location is different.
 
-After some tinkering with Cyberscore's code, I managed to fully integrate the
-proof OCR library into the website and everything is working fine. Here's a
-video of the final result:
+When I first ran the code in the browser, it didn't work. I was getting a
+"Unreachable code" exception in the console. With `console_error_panic_hook`
+enabled, I was able to see the actual exception: the `image` crate was trying
+to use threads to decode the screenshot jpeg. This feature seems to be enabled
+by default, so I had to change `Cargo.toml` to disable the default features and
+only pull in the features I thought were necessary:
+
+~~~~toml
+[dependencies]
+image = {
+  version = "0.24.1",
+  default-features = false,
+  features = ["gif", "jpeg", "png", "webp", "farbfeld"]
+}
+~~~~
+
+Doing this solved the problem, and things started working. After some tinkering
+with Cyberscore's code, I managed to fully integrate the proof OCR library into
+the website and everything is working fine. Here's a video of the final result:
 
 <video controls>
   <source src="pla-ocr.mp4" type="video/mp4" />
