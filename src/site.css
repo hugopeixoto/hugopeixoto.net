@@ -123,8 +123,12 @@ header nav a:hover {
 }
 
 #content img {
-  margin: var(--line) 0px;
+  margin: var(--line) auto;
+  display: block;
+  max-width: 100%;
 }
+
+#content video { max-width: 100%; }
 
 #content a {
   overflow-wrap: break-word;

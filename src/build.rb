@@ -97,7 +97,8 @@ module Builder
     articles =
       Dir['src/{articles,journal}/*.md']
       .map { |filename| apply_markdown(read_article(filename)) }
-      .sort_by { |article| article["created_at"] }
+      .reject { |article| article.fetch('draft', false) }
+      .sort_by { |article| article['created_at'] }
       .reverse
 
     data = {
@@ -110,6 +111,7 @@ module Builder
     `mkdir -p build/articles/`
     `cp src/articles/*.png build/articles/`
     `cp src/articles/*.jpg build/articles/`
+    `cp src/articles/*.mp4 build/articles/`
     `cp src/articles/*.webm build/articles/`
     `cp src/site.css build/site.css`
     `cp src/favicon.ico build/favicon.ico`
