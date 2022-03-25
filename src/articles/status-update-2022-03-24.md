@@ -15,7 +15,7 @@ excerpt: |
 
 ## ANSOL
 
-I have joined the board of [ANSOL][https://ansol.org] for the next two years.
+I have joined the board of [ANSOL](https://ansol.org) for the next two years.
 For the first few months I'll be trying to improve/simplify some of our
 processes to speed up new memberships and free up some of our time to work on
 actual issues.
@@ -36,7 +36,7 @@ connection plugin. You can find this plugin available under an MIT license:
 
 Infrastructure-wise, We're also thinking of switching to a different platform
 to manage membership subscriptions, payments, etc. We're currently using
-[CiviCRM][https://civicrm.org/], and from what I understand it's a bit complex
+[CiviCRM](https://civicrm.org/), and from what I understand it's a bit complex
 to use that cause unnecessary delays in processing membership requests and
 renewals, so we're looking into alternatives.
 
