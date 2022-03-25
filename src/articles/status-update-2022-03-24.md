@@ -37,7 +37,7 @@ connection plugin. You can find this plugin available under an MIT license:
 Infrastructure-wise, We're also thinking of switching to a different platform
 to manage membership subscriptions, payments, etc. We're currently using
 [CiviCRM](https://civicrm.org/), and from what I understand it's a bit complex
-to use that cause unnecessary delays in processing membership requests and
+to use, causing unnecessary delays in processing membership requests and
 renewals, so we're looking into alternatives.
 
 Next week, on the 30th, we'll be hosting an online discussion / meetup on the
