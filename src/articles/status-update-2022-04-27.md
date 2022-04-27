@@ -1,7 +1,7 @@
 ---
 kind: article
 title: Status update, April 2022
-created_at: 2022-03-27
+created_at: 2022-04-27
 excerpt: |
   This month I did some random work for ANSOL and restart my project of
   tracking my Pokémon TCG collection.
