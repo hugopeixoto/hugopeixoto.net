@@ -3,7 +3,8 @@ kind: article
 title: Status update, May 2022
 created_at: 2022-06-09
 excerpt: |
-  TODO Excerpt
+  This month I moved away from dokku to podman, set up IndieAuth on my domain,
+  and fixed some bugs in Veloren.
 ---
 
 <aside markdown="1">
