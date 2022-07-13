@@ -3,6 +3,7 @@ require 'mustache'
 require 'kramdown'
 require 'kramdown-syntax-coderay'
 require 'rouge'
+require 'date'
 
 class YAMLFrontMatter
   PATTERN = /\A(---\r?\n(.*?)\n?^---\s*$\n?)/m.freeze
@@ -10,7 +11,7 @@ class YAMLFrontMatter
   class << self
     def extract(content)
       if content =~ PATTERN
-        [YAML.load(Regexp.last_match(2)), content.sub(Regexp.last_match(1), "")]
+        [YAML.load(Regexp.last_match(2), permitted_classes: [Symbol, Date]), content.sub(Regexp.last_match(1), "")]
       else
         [{}, content]
       end
