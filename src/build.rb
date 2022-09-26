@@ -52,7 +52,7 @@ module Builder
     article = front_matter.merge("body" => body)
 
     article.merge(
-      "excerpt" => article["excerpt"]&.gsub(/\s+/, " "),
+      "excerpt" => article["excerpt"]&.gsub(/\s+/, " ")&.strip,
       "basename" => basename,
       "path" => "/articles/#{basename}.html",
       "isJournal" => article["kind"] == "journal",
@@ -78,7 +78,8 @@ module Builder
 
     article.merge(
       "body" => parsed.to_html,
-      "excerpt" => excerpt,
+      "excerpt_html" => excerpt,
+      "excerpt" => article["excerpt"]&.gsub(/\s+/, " ")&.strip,
       "toc" => parsed.to_toc.children.each.map { |x| { text: x.value.options[:raw_text], id: x.attr[:id] } },
       "hasTOC" => parsed.to_toc.children.any?,
     )
