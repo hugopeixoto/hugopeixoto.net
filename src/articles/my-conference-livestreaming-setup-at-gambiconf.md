@@ -14,8 +14,8 @@ image: https://hugopeixoto.net/articles/gambiconf-setup.jpg
   time: <https://github.com/sponsors/hugopeixoto>
 </aside>
 
-I volunteered to be the AV team at [Gambiconf](https://gambiconf.dev/), an in
-person conference in Lisbon. Some things didn't go exactly as planned, so
+I volunteered to be the AV team at [Gambiconf](https://gambiconf.dev/), an
+in-person conference in Lisbon. Some things didn't go exactly as planned, so
 here's a summary of how things went.
 
 
