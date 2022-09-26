@@ -52,6 +52,7 @@ module Builder
     article = front_matter.merge("body" => body)
 
     article.merge(
+      "excerpt" => article["excerpt"]&.gsub(/\s+/, " "),
       "basename" => basename,
       "path" => "/articles/#{basename}.html",
       "isJournal" => article["kind"] == "journal",

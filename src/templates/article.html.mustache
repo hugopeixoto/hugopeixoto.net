@@ -18,7 +18,13 @@
     <meta property="og:description" content="{{excerpt}}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://hugopeixoto.net{{path}}" />
+    {{#image}}
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="og:image" content="{{image}}" />
+    {{/image}}
+    {{^image}}
     <meta property="og:image" content="https://hugopeixoto.net/images/logo.png" />
+    {{/image}}
   </head>
   <body>
     <header class="vcard">

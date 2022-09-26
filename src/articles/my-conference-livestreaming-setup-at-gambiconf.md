@@ -3,6 +3,10 @@ kind: article
 title: My conference livestreaming setup at Gambiconf
 created_at: 2022-09-25
 excerpt: |
+  I volunteered to be the AV team at Gambiconf, an in person conference in
+  Lisbon. Some things didn't go exactly as planned, so here's a summary of how
+  things went.
+image: https://hugopeixoto.net/articles/gambiconf-setup.jpg
 ---
 
 <aside markdown="1">
