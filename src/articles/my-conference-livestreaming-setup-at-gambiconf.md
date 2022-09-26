@@ -33,6 +33,8 @@ connected via 3.5'' to the camera, so that everything would be synced. Then,
 the idea was to use an AverMedia LGP 4k to intercept the speaker's computer
 connection to the TV and stream it to the OBS machine over USB-C.
 
+![](gambiconf-setup-diagram.png)
+
 Like every plan, it didn't survive first contact.
 
 ## OBS machine issues
