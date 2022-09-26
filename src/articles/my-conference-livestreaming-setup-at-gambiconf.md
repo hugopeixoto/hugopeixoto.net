@@ -50,9 +50,10 @@ added an m.2 SSD so I won't have the same issues again.
 
 I arrived at the venue and hit the first issue almost immediately: the screen
 had a weird resolution of 1366x768. My fedora powered macbook pro was able to
-connect to it, but the organizer's computer (running windows, afaik) was having
-trouble and the AverMedia device also doesn't support that resolution. I tried
-to replace the AverMedia with a backup HDMI splitter, but it also didn't work.
+connect to it, but the organizer's computer (running both MacOS and Windows
+under Parallels) was having trouble and the AverMedia device also doesn't
+support that resolution. I tried to replace the AverMedia with a backup HDMI
+splitter, but it also didn't work.
 
 As a last resort, we tried [VDO.Ninja][vdo], which uses WebRTC to transmit
 video peer to peer. We connected my laptop to the venue's screen, loaded
