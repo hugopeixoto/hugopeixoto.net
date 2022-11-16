@@ -6,6 +6,7 @@ require_relative '../src/build.rb'
 
 server = WEBrick::HTTPServer.new Port: 3000, DocumentRoot: 'build'
 
+Builder.run
 rebuilder = Listen.to('src') do |modified, added, removed|
   puts "rebuilding"
   Builder.run
