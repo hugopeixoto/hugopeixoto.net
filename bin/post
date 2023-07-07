@@ -3,12 +3,14 @@
 
 require 'date'
 
-filename = ARGV[0]
+title = ARGV.join(" ")
+slug = title.downcase.gsub(" ", "-")
+filename = "src/articles/#{slug}.md"
 
 template = <<~TEMPLATE
   ---
   kind: article
-  title: TODO Title
+  title: #{title}
   created_at: #{Date.today}
   excerpt: |
     TODO Excerpt
@@ -27,4 +29,5 @@ template = <<~TEMPLATE
   </aside>
 TEMPLATE
 
-File.write("src/articles/#{filename}.md", template)
+File.write(filename, template)
+exec "vim", filename

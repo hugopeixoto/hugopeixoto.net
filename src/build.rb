@@ -121,7 +121,6 @@ module Builder
     `cp -r src/images build/images`
     `bundle exec rougify style github > build/rouge.css`
 
-    render("about.html", data)
     render("articles.html", data)
     render("articles.xml", data)
     render("contact.html", data)
