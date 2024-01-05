@@ -88,7 +88,7 @@ module Builder
   def self.render(path, data)
     File.write(
       "build/#{path}",
-      if File.exists?("src/templates/#{path}.mustache")
+      if File.exist?("src/templates/#{path}.mustache")
         Mustache.render(File.read("src/templates/#{path}.mustache"), data)
       else
         File.read("src/#{path}")

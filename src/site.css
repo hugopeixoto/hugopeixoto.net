@@ -205,9 +205,11 @@ ol.article-list {
   margin-top: var(--line);
 }
 
+#content ol, #content ul {
+  padding-left: 40px;
+}
 #content > ol, #content > ul {
   margin: var(--line) 0px;
-  padding-left: 40px;
 }
 
 p:nth-child(n+2) {
