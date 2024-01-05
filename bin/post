@@ -3,6 +3,12 @@
 
 require 'date'
 
+if ARGV.empty?
+  puts "usage: bin/post title of the post"
+  exit 1
+end
+
+
 title = ARGV.join(" ")
 slug = title.downcase.gsub(" ", "-")
 filename = "src/articles/#{slug}.md"
