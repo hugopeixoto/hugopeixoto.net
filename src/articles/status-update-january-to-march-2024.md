@@ -1,9 +1,10 @@
 ---
 kind: article
 title: Status update, January to March 2024
-created_at: 2024-03-24
+created_at: 2024-04-01
 excerpt: |
-  TODO Excerpt
+  This quarter I did a bunch of work for ANSOL, built a rust WebAssembly tool
+  for Cyberscore and organized a meetup.
 ---
 
 <aside markdown="1">
